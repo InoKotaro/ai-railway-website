@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Slider({ slides }) {
   const [current, setCurrent] = useState(0);
@@ -21,14 +22,15 @@ export default function Slider({ slides }) {
             i === current ? 'z-10 opacity-100' : 'z-0 opacity-0'
           }`}
         >
-          <img
+          <Image
             src={slide.img}
             alt={slide.title}
-            className="h-full w-full object-cover"
+            fill
+            sizes="100vw"
+            priority={i === 0}
+            className="object-cover"
+            style={{ objectFit: 'contain' }}
           />
-          <div className="bg-opacity-40 absolute bottom-4 left-4 rounded bg-black px-3 py-1 text-white">
-            {slide.title}
-          </div>
         </div>
       ))}
     </div>

@@ -15,7 +15,7 @@ export default function CurrentStatus() {
     <section className="bg-primary text-gray py-3 text-center font-semibold">
       <div className="flex items-center justify-center gap-2 px-2">
         <span>
-          <span>現在の運転状況：</span>
+          <span>現在の運転状況</span>
         </span>
         {/* アイコン */}
         {statusMessage.icon && (
