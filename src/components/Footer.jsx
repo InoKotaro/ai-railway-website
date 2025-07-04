@@ -1,10 +1,10 @@
 'use client';
 
-export default function Footer({ darkTurquoise }) {
+export default function Footer({ siteColor }) {
   return (
     <footer
       className="mt-auto py-6 text-center text-white"
-      style={{ backgroundColor: darkTurquoise }}
+      style={{ backgroundColor: siteColor }}
     >
       © 2025 AI電鉄株式会社 All rights reserved.
     </footer>

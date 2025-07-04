@@ -1,10 +1,10 @@
 'use client';
 
-export default function Header({ navLinks, darkTurquoise }) {
+export default function Header({ navLinks, siteColor }) {
   return (
     <header
       className="flex items-center justify-between px-6 py-4"
-      style={{ backgroundColor: darkTurquoise }}
+      style={{ backgroundColor: siteColor }}
     >
       <div className="text-xl font-bold text-white">AI電鉄</div>
       <nav className="hidden space-x-6 text-white md:flex">
