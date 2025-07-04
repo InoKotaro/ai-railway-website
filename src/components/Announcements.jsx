@@ -1,9 +1,9 @@
 'use client';
 
-export default function Announcements({ announcements, darkTurquoise }) {
+export default function Announcements({ announcements, siteColor }) {
   return (
     <section>
-      <h2 className="mb-6 text-3xl font-bold" style={{ color: darkTurquoise }}>
+      <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
         おしらせ
       </h2>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">

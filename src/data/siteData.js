@@ -1,20 +1,27 @@
-export const darkTurquoise = '#00ced1';
-import { FaRegCircle } from 'react-icons/fa';
+import { PiCircleBold } from 'react-icons/pi';
 import { IoIosWarning } from 'react-icons/io';
-import { ImCross } from 'react-icons/im';
+import { RxCross2 } from 'react-icons/rx';
 
-export const operationStatusMessages = [
+export const siteColor = '#1e90ff';
+
+export const statusMessages = [
   {
     text: '全線で平常通り運転しています',
-    icon: FaRegCircle,
+    shortText: '平常運転',
+    icon: PiCircleBold,
+    color: 'text-green-500',
   },
   {
-    text: '【環状線】混雑の影響で一部列車に遅れが発生しています',
+    text: '【環状線】 混雑の影響で一部列車に遅れが発生しています',
+    shortText: '<環状線> 一部列車遅延',
     icon: IoIosWarning,
+    color: 'text-yellow-500',
   },
   {
-    text: '【湾岸線】強風の影響で運転を見合わせています',
-    icon: ImCross,
+    text: '【湾岸線】 強風の影響で運転を見合わせています',
+    shortText: '<湾岸線> 運転見合わせ',
+    icon: RxCross2,
+    color: 'text-red-500',
   },
 ];
 
@@ -42,7 +49,8 @@ export const prSpots = [
 ];
 
 export const sliderSlides = [
-  { title: '最新の快適車両で快走！', img: '/images/slider1.jpg' },
+  { title: '走り続ける、地域の笑顔とともに', img: '/images/fv/fv_01.jpg' },
   { title: '湾岸線新路線開業！', img: '/images/slider2.jpg' },
   { title: '安全・安心への取り組み', img: '/images/slider3.jpg' },
+  { title: 'test', img: '/images/slider3.jpg' },
 ];

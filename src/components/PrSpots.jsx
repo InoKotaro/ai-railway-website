@@ -1,9 +1,9 @@
 'use client';
 
-export default function PrSpots({ prSpots, darkTurquoise }) {
+export default function PrSpots({ prSpots, siteColor }) {
   return (
     <section>
-      <h2 className="mb-6 text-3xl font-bold" style={{ color: darkTurquoise }}>
+      <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
         沿線PR
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-4">
