@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI電鉄 公式サイト (ポートフォリオ)
 
-## Getting Started
+Next.js と Tailwind CSS を使い、鉄道会社イメージしてWEBサイトを制作しました。<br>
+企業サイトを想定し、ヘッダー、スライダー、お知らせ、企業案内などを作成致しました。<br>
+なお、当サイトで使用している画像はすべてAI生成です。
 
-First, run the development server:
+---
+
+## デモサイト
+
+ここ書き換え
+[https://ai-railway.vercel.app/](https://ai-railway.vercel.app/)
+
+---
+
+## 使用技術
+
+- Next.js 14
+
+- React
+
+- Tailwind CSS
+
+- Vercel（ホスティング）
+
+- GitHub
+
+---
+
+## 主な機能
+
+- 自動スライダーでファーストビューを表示
+
+- レスポンシブデザイン（PC/スマホ対応）
+
+- ページルーティング（企業ページ、安全対策ページなど）
+
+- コンポーネント分割で保守性を向上
+
+---
+
+## セットアップ方法
+
+1⃣ このリポジトリをクローン
+
+```bash
+ここ書き換え
+git clone https://github.com/your-username/ai-railway-website.git
+```
+
+2⃣ 必要なパッケージをインストール
+
+```bash
+npm install
+```
+
+3⃣ 開発サーバーを起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4⃣ ブラウザで http://localhost:3000 にアクセス
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## こだわりポイント
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- リロードするたびに運転状況がランダムで変化
 
-## Learn More
+- Next.js の静的サイト生成（SSG）を意識
 
-To learn more about Next.js, take a look at the following resources:
+- ディレクトリ構造を整理し、再利用できるコンポーネントを作成
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Tailwind CSS を使った効率的なスタイリング
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Vercel を利用してデプロイと自動デプロイ（CI/CD）を体験

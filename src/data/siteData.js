@@ -4,6 +4,7 @@ import { RxCross2 } from 'react-icons/rx';
 
 export const siteColor = '#1e90ff';
 
+// 運転状況
 export const statusMessages = [
   {
     text: '全線で平常通り運転しています',
@@ -25,32 +26,36 @@ export const statusMessages = [
   },
 ];
 
+// スライド
+export const sliderSlides = [
+  { title: '走り続ける、地域の笑顔とともに', img: '/images/fv/fv_01.png' },
+  { title: '新しい始発、3:55', img: '/images/fv/fv_02.jpg' },
+  { title: 'アーバンリッジ新高台', img: '/images/fv/fv_03.jpg' },
+  { title: 'いつもの駅が旅のはじまりになる', img: '/images/fv/fv_04.jpg' },
+];
+
+// お知らせ
 export const announcements = [
-  { title: '海原車両センターイベント', img: '/images/event1.jpg' },
-  { title: 'あいだっくラッピング車両', img: '/images/event2.jpg' },
+  { title: '海原車両センターイベント', img: '/images/news/news_depot.jpg' },
+  { title: 'あいだっくラッピング車両', img: '/images/news/news_wrapping.jpg' },
   {
     title: '湾岸線有料指定席列車ベイライナーデビュー',
-    img: '/images/event3.jpg',
+    img: '/images/news/news_bayliner.jpg',
   },
 ];
 
+// 路線
 export const lines = [
-  { name: '環状線', img: '/images/line_loop.jpg' },
-  { name: '東西線', img: '/images/line_eastwest.jpg' },
-  { name: '南北線', img: '/images/line_northsouth.jpg' },
-  { name: '湾岸線', img: '/images/line_bay.jpg' },
+  { name: '環状線', img: '/images/train/train_loopline.jpg' },
+  { name: '東西線', img: '/images/train/train_tozailine.jpg' },
+  { name: '南北線', img: '/images/train/train_nambokuline.jpg' },
+  { name: '湾岸線', img: '/images/train/train_wanganline.jpg' },
 ];
 
+// おでかけ
 export const prSpots = [
   { name: 'グランド・サンプルホテルズTokyo', img: '/images/pr_hotel.jpg' },
   { name: 'fureAIショッピングモール', img: '/images/pr_shopping.jpg' },
   { name: 'オーシャンミュージアム浜里', img: '/images/pr_museum.jpg' },
   { name: '東京ぴょんぴょんランド', img: '/images/pr_park.jpg' },
-];
-
-export const sliderSlides = [
-  { title: '走り続ける、地域の笑顔とともに', img: '/images/fv/fv_01.jpg' },
-  { title: '湾岸線新路線開業！', img: '/images/slider2.jpg' },
-  { title: '安全・安心への取り組み', img: '/images/slider3.jpg' },
-  { title: 'test', img: '/images/slider3.jpg' },
 ];

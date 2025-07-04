@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export default function Announcements({ announcements, siteColor }) {
   return (
@@ -12,7 +13,16 @@ export default function Announcements({ announcements, siteColor }) {
             key={title}
             className="cursor-pointer overflow-hidden rounded-lg border shadow transition-shadow hover:shadow-lg"
           >
-            <img src={img} alt={title} className="h-48 w-full object-cover" />
+            <div className="relative h-48 w-full">
+              <Image
+                src={img}
+                alt={title}
+                fill
+                sizes="(max-width: 640px) 100vw, 33vw"
+                className="object-cover"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
             <div className="p-4 text-lg font-semibold">{title}</div>
           </article>
         ))}
