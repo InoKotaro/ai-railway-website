@@ -31,6 +31,7 @@ export default function Home() {
       {/* スライダー */}
       <Slider slides={sliderSlides} />
 
+
       <section className="w-full py-16">
         {/* コンテンツの幅を他のセクションと合わせるためのインナーdiv */}
         {/* お知らせ */}

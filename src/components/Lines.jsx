@@ -24,6 +24,7 @@ export default function Lines({ lines, siteColor }) {
                 className="object-cover"
               />
             </div>
+
             <div className="p-5 pt-2 pb-2 text-center text-2xl font-semibold text-gray-700">
               {name}
             </div>
