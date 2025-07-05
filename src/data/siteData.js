@@ -50,10 +50,30 @@ export const announcements = [
 
 // 路線
 export const lines = [
-  { name: '環状線', img: '/images/train/train_loopline.jpg' },
-  { name: '東西線', img: '/images/train/train_tozailine.jpg' },
-  { name: '南北線', img: '/images/train/train_nambokuline.jpg' },
-  { name: '湾岸線', img: '/images/train/train_wanganline.jpg' },
+  {
+    name: '環状線',
+    about:
+      '都市の中心を大きく一周する路線。主要ターミナル駅やオフィス街を効率よく結び、乗り換えも便利で通勤・通学、ショッピングに最適です。',
+    img: '/images/train/train_loopline.jpg',
+  },
+  {
+    name: '東西線',
+    about:
+      '都市の東西を横断する路線。住宅地からオフィス街までをスムーズにつなぎ、通勤・通学の足として多くの方に利用されています。',
+    img: '/images/train/train_tozailine.jpg',
+  },
+  {
+    name: '南北線',
+    about:
+      '住宅街とビジネス街を南北に結ぶ路線。沿線には学校や商業施設が多く、毎日の通勤・通学から週末のお出かけまで幅広く活躍します。',
+    img: '/images/train/train_nambokuline.jpg',
+  },
+  {
+    name: '湾岸線',
+    about:
+      '海沿いのエリアを走る路線。ウォーターフロント開発地域や物流拠点を結びます。観光地や商業施設へのアクセスに最適です。',
+    img: '/images/train/train_wanganline.jpg',
+  },
 ];
 
 // おでかけ

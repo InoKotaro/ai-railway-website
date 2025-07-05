@@ -31,19 +31,25 @@ export default function Home() {
       <CurrentStatus />
 
       {/* スライダー */}
-      <section className="w-full">
-        <Slider slides={sliderSlides} />
-      </section>
+      <Slider slides={sliderSlides} />
 
-      {/* メインコンテンツ */}
-      <main className="mx-auto my-10 max-w-6xl space-y-16 px-4 sm:px-6 lg:px-8">
-        {/* お知らせ */}
-        <Announcements announcements={announcements} siteColor={siteColor} />
+      {/* お知らせ */}
+      <section className="w-full py-16">
+        {/* コンテンツの幅を他のセクションと合わせるためのインナーdiv */}
+        <div className="mx-auto max-w-6xl px-4 pt-5 sm:px-6 lg:px-8">
+          <Announcements announcements={announcements} siteColor={siteColor} />
+        </div>
+
         {/* 路線紹介 */}
-        <Lines lines={lines} siteColor={siteColor} />
+        <div className="mx-auto mt-17 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Lines lines={lines} siteColor={siteColor} />
+        </div>
+
         {/* おでかけガイド */}
-        <PrSpots prSpots={prSpots} siteColor={siteColor} />
-      </main>
+        <div className="mx-auto mt-17 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <PrSpots prSpots={prSpots} siteColor={siteColor} />
+        </div>
+      </section>
 
       {/* フッター */}
       <Footer siteColor={siteColor} />
