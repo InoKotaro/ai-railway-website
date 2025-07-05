@@ -26,8 +26,12 @@ export const statusMessages = [
   },
 ];
 
-// スライド
+// スライド loopさせるため配列倍増化
 export const sliderSlides = [
+  { title: '走り続ける、地域の笑顔とともに', img: '/images/fv/fv_01.png' },
+  { title: '新しい始発、3:55', img: '/images/fv/fv_02.jpg' },
+  { title: 'アーバンリッジ新高台', img: '/images/fv/fv_03.jpg' },
+  { title: 'いつもの駅が旅のはじまりになる', img: '/images/fv/fv_04.jpg' },
   { title: '走り続ける、地域の笑顔とともに', img: '/images/fv/fv_01.png' },
   { title: '新しい始発、3:55', img: '/images/fv/fv_02.jpg' },
   { title: 'アーバンリッジ新高台', img: '/images/fv/fv_03.jpg' },
@@ -54,8 +58,11 @@ export const lines = [
 
 // おでかけ
 export const prSpots = [
-  { name: 'グランド・サンプルホテルズTokyo', img: '/images/pr_hotel.jpg' },
-  { name: 'fureAIショッピングモール', img: '/images/pr_shopping.jpg' },
-  { name: 'オーシャンミュージアム浜里', img: '/images/pr_museum.jpg' },
-  { name: '東京ぴょんぴょんランド', img: '/images/pr_park.jpg' },
+  {
+    name: 'グランド・サンプルホテルズTokyo',
+    img: '/images/outing/hotel_01.jpg',
+  },
+  { name: 'fureAIショッピングモール', img: '/images/outing/sc_01.jpg' },
+  { name: 'オーシャンミュージアム浜里', img: '/images/outing/aqua_01.jpg' },
+  { name: '東京ぴょんぴょんランド', img: '/images/outing/themepark_01.jpg' },
 ];

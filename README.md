@@ -1,6 +1,6 @@
-# AI電鉄 公式サイト (ポートフォリオ)
+# AI電鉄 WEBサイト (ポートフォリオ)
 
-Next.js と Tailwind CSS を使い、鉄道会社イメージしてWEBサイトを制作しました。<br>
+Next.js と Tailwind CSS を使い、鉄道会社をイメージしてWEBサイトを制作しました。<br>
 企業サイトを想定し、ヘッダー、スライダー、お知らせ、企業案内などを作成致しました。<br>
 なお、当サイトで使用している画像はすべてAI生成です。
 
@@ -20,6 +20,8 @@ Next.js と Tailwind CSS を使い、鉄道会社イメージしてWEBサイト�
 - React
 
 - Tailwind CSS
+
+- Swiper
 
 - Vercel（ホスティング）
 

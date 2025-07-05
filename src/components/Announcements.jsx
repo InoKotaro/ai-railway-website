@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 export default function Announcements({ announcements, siteColor }) {
   return (
-    <section>
+    <section id="announcements">
       <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
-        おしらせ
+        お知らせ
       </h2>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
         {announcements.map(({ title, img }) => (
@@ -20,7 +20,6 @@ export default function Announcements({ announcements, siteColor }) {
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
                 className="object-cover"
-                style={{ objectFit: 'contain' }}
               />
             </div>
             <div className="p-4 text-lg font-semibold">{title}</div>
