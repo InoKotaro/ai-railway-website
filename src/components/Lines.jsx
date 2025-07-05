@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Lines({ lines, siteColor }) {
   return (
-    <section>
+    <section id='lines'>
       <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
         路線紹介
       </h2>
@@ -21,7 +21,7 @@ export default function Lines({ lines, siteColor }) {
                 fill
                 sizes="(max-width: 640px) 100vw, 25vw"
                 className="object-cover"
-                style={{ objectFit: 'contain' }}
+                // style={{ objectFit: 'contain' }}
               />
             </div>
             <div className="p-3 text-center font-semibold">{name}</div>

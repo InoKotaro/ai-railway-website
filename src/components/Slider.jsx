@@ -1,38 +1,44 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
+// Swiper のコンポーネントとモジュール
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+// Swiper の CSS
+import 'swiper/css';
 
 export default function Slider({ slides }) {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
+  // スライダー
   return (
-    <div className="relative h-64 w-full overflow-hidden rounded-lg md:h-96">
-      {slides.map((slide, i) => (
-        <div
-          key={i}
-          className={`absolute top-0 left-0 h-full w-full transition-opacity duration-1000 ${
-            i === current ? 'z-10 opacity-100' : 'z-0 opacity-0'
-          }`}
-        >
-          <Image
-            src={slide.img}
-            alt={slide.title}
-            fill
-            sizes="100vw"
-            priority={i === 0}
-            className="object-cover"
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
-      ))}
-    </div>
+    <Swiper
+      modules={[Autoplay]}
+      loop={true}
+      slidesPerView={'auto'}
+      centeredSlides={true}
+      spaceBetween={20}
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
+      className="h-64 w-full md:h-96"
+    >
+      {slides.map((slide, i) => {
+        return (
+          <SwiperSlide
+            key={`${slide.title}-${i}`}
+            style={{ width: '75%', maxWidth: '800px' }}
+          >
+            <Image
+              src={slide.img}
+              alt={slide.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 75vw"
+              priority={i === 0}
+              className="object-contain"
+            />
+          </SwiperSlide>
+        );
+      })}
+    </Swiper>
   );
 }
