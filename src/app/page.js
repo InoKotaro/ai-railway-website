@@ -33,7 +33,6 @@ export default function Home() {
 
 
       <section className="w-full py-16">
-        {/* コンテンツの幅を他のセクションと合わせるためのインナーdiv */}
         {/* お知らせ */}
         <div className="mx-auto max-w-6xl px-4 pt-5 sm:px-6 lg:px-8">
           <Announcements announcements={announcements} siteColor={siteColor} />

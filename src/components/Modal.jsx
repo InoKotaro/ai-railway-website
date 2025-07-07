@@ -34,7 +34,7 @@ export default function Modal({ isOpen, onClose, children }) {
   return (
     <div
       // モーダル表示時背景
-      className="bg-opacity-60 fixed inset-0 z-50 flex items-center justify-center bg-black"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
       onClick={onClose}
     >
       {/* モーダル外枠 */}
