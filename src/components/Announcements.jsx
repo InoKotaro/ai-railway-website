@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import { MdAnnouncement } from 'react-icons/md';
 import Modal from './Modal';
 
 export default function Announcements({ announcements, siteColor }) {
@@ -45,9 +46,14 @@ export default function Announcements({ announcements, siteColor }) {
     // <div> ではレイアウト崩れ原因、HTML構造が複雑になる
     <>
       <section id="announcements">
-        <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
+        <h2
+          className="mb-6 flex text-3xl font-bold gap-3"
+          style={{ color: siteColor }}
+        >
           お知らせ
+          <MdAnnouncement className="text-4xl" />
         </h2>
+
         <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
           {announcements.map((announcement, index) => (
             <div key={announcement.title}>

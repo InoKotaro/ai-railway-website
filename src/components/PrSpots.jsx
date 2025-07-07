@@ -1,9 +1,13 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import { FaWalking } from 'react-icons/fa';
 import Modal from './Modal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function PrSpots({ prSpots, siteColor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,8 +26,12 @@ export default function PrSpots({ prSpots, siteColor }) {
   return (
     <>
       <section id="prSpots">
-        <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
+        <h2
+          className="mb-6 flex gap-0.5 text-3xl font-bold"
+          style={{ color: siteColor }}
+        >
           おでかけガイド
+          <FaWalking className="text-4xl" />
         </h2>
         <div className="grid grid-cols-1 gap-6 text-gray-700 sm:grid-cols-4">
           {prSpots.map((spot) => (
@@ -50,27 +58,36 @@ export default function PrSpots({ prSpots, siteColor }) {
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         {selectedSpot && (
           <div>
-            <h3 className="mb-4 text-2xl font-bold">{selectedSpot.name}</h3>
             <Swiper
               modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              loop={true}
-              className="mb-4"
+              loop={selectedSpot.images.length > 1}
+              className="mb-4 rounded-lg"
             >
               {selectedSpot.images.map((src, index) => (
                 <SwiperSlide key={index}>
-                  <Image
-                    src={src}
-                    alt={`${selectedSpot.name} ${index + 1}`}
-                    width={800}
-                    height={450}
-                    className="w-full rounded-md object-cover"
-                  />
+                  <div className="relative aspect-video">
+                    <Image
+                      src={src}
+                      alt={`${selectedSpot.name} ${index + 1}`}
+                      fill
+                      className="w-full rounded-md object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
-            <p className="text-gray-700">{selectedSpot.description}</p>
+            <p className="whitespace-pre-wrap text-gray-700">
+              {selectedSpot.station}
+            </p>
+            <h3 className="mb-4 text-2xl font-bold text-gray-700">
+              {selectedSpot.name}
+            </h3>
+            <p className="whitespace-pre-wrap text-gray-700">
+              {selectedSpot.description}
+            </p>
           </div>
         )}
       </Modal>

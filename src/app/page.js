@@ -31,7 +31,6 @@ export default function Home() {
       {/* スライダー */}
       <Slider slides={sliderSlides} />
 
-
       <section className="w-full py-16">
         {/* お知らせ */}
         <div className="mx-auto max-w-6xl px-4 pt-5 sm:px-6 lg:px-8">
