@@ -49,7 +49,10 @@ export default function PrSpots({ prSpots, siteColor }) {
                   className="object-cover"
                 />
               </div>
-              <div className="p-3 text-center font-semibold">{spot.name}</div>
+              <p className="pt-1.5 pl-5">{spot.station}</p>
+              <div className="pt-1.5 pb-5 text-center font-semibold">
+                {spot.name}
+              </div>
             </article>
           ))}
         </div>
