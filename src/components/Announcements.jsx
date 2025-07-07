@@ -2,45 +2,73 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Modal from './Modal';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-
-// SwiperのCSSをインポート
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export default function Announcements({ announcements, siteColor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAnnouncement, setSelectedAnnouncement] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const handleOpenModal = (announcement) => {
+  const handleOpenModal = (announcement, index) => {
     setSelectedAnnouncement(announcement);
     setIsModalOpen(true);
+    setSelectedIndex(index);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedAnnouncement(null);
+    setSelectedIndex(null);
   };
 
+  // 指定された日数後の日付を 'YYYY/MM/DD' 形式で取得する関数
+  const getFutureDate = (days) => {
+    const date = new Date();
+    date.setDate(date.getDate() + days);
+    const year = date.getFullYear();
+    // getMonth()は0から始まるため+1する
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}/${month}/${day}`;
+  };
+
+  // 各お知らせに追加する日数のリスト
+  // 1つ目に7日後、2つ目に14日後、3つ目に23日後指定
+  const daysToAdd = [7, 17, 23];
+
+  // お知らせがない場合は何も表示しない
+  if (!announcements || announcements.length === 0) {
+    return null;
+  }
+
   return (
+    // <section> と <Modal> 2つコンポーネントを返すためフラグメント使用
+    // <div> ではレイアウト崩れ原因、HTML構造が複雑になる
     <>
       <section id="announcements">
         <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
           お知らせ
         </h2>
-        <div className="space-y-4">
-          {announcements.map((announcement) => (
-            <article
-              key={announcement.title}
-              className="cursor-pointer rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:bg-gray-50 hover:shadow-md"
-              onClick={() => handleOpenModal(announcement)}
-            >
-              <p className="text-lg font-semibold text-gray-800">
-                {announcement.title}
-              </p>
-            </article>
+        <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+          {announcements.map((announcement, index) => (
+            <div key={announcement.title}>
+              <article
+                className="cursor-pointer p-4 transition-colors hover:bg-gray-50"
+                onClick={() => handleOpenModal(announcement, index)}
+              >
+                <div className="flex items-center justify-start gap-9">
+                  {/* 対応する日付が存在する場合のみ表示 */}
+                  {daysToAdd[index] && (
+                    <span className="flex-shrink-0 text-sm text-gray-500">
+                      {getFutureDate(daysToAdd[index])}
+                    </span>
+                  )}
+                  <p className="text-md text-gray-700">{announcement.title}</p>
+                </div>
+              </article>
+              {index < announcements.length - 1 && (
+                <hr className="border-gray-200" />
+              )}
+            </div>
           ))}
         </div>
       </section>
@@ -48,32 +76,34 @@ export default function Announcements({ announcements, siteColor }) {
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         {selectedAnnouncement && (
           <div>
-            <h3 className="mb-4 text-2xl font-bold">
-              {selectedAnnouncement.title}
-            </h3>
             {selectedAnnouncement.images &&
               selectedAnnouncement.images.length > 0 && (
-                <Swiper
-                  modules={[Navigation, Pagination]}
-                  navigation
-                  pagination={{ clickable: true }}
-                  loop={true}
-                  className="mb-4"
-                >
-                  {selectedAnnouncement.images.map((src, index) => (
-                    <SwiperSlide key={index}>
+                <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {selectedAnnouncement.images.map((src, imgIndex) => (
+                    <div key={imgIndex} className="relative aspect-video">
                       <Image
                         src={src}
-                        alt={`${selectedAnnouncement.title} ${index + 1}`}
-                        width={800}
-                        height={450}
-                        className="w-full rounded-md object-cover"
+                        alt={`${selectedAnnouncement.title} ${imgIndex + 1}`}
+                        fill
+                        className="rounded-md object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                    </SwiperSlide>
+                    </div>
                   ))}
-                </Swiper>
+                </div>
               )}
-            <p className="text-gray-700">{selectedAnnouncement.description}</p>
+
+            {selectedIndex !== null && daysToAdd[selectedIndex] && (
+              <p className="mb-4 text-sm text-gray-500">
+                {getFutureDate(daysToAdd[selectedIndex])}
+              </p>
+            )}
+            <h3 className="mb-2 text-2xl font-bold text-gray-700">
+              {selectedAnnouncement.title}
+            </h3>
+            <p className="mb-4 whitespace-pre-wrap text-gray-700">
+              {selectedAnnouncement.description}
+            </p>
           </div>
         )}
       </Modal>

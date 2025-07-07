@@ -41,14 +41,24 @@ export const sliderSlides = [
 // お知らせ
 export const announcements = [
   {
-    title: '海原車両センターイベント',
-    images: ['/images/news/depot.jpg', '/images/news/depot2.jpg'],
+    title: '海原車両センター特別公開イベント開催！',
+    description:
+      '普段は関係者以外立ち入ることができない海原車両センターを、特別に一般公開いたします。当日は現役の作業員が電車のしくみや点検の様子をわかりやすく解説。さらに、AI電鉄キャラクター「あいだっく」との記念撮影会も実施します！ぜひこの機会に、普段見ることのできない車両センターの裏側をお楽しみください。',
+    images: ['/images/news/news_depot.jpg', '/images/news/news_depot2.jpg'],
   },
 
-  { title: 'あいだっくラッピング車両', images: ['/images/news/wrappion.jpg'] },
+  {
+    title: 'あいだっくラッピング車両を運転します',
+    description:
+      'AI電鉄では、秋の交通安全運動にあわせて、公式キャラクター「あいだっく」がデザインされたラッピング車両を期間限定で運行します。走行中のあいだっくラッピング車両を見かけた際は、安全に十分ご注意のうえ、ぜひお楽しみください。みなさまのご乗車をお待ちしております。',
+    images: ['/images/news/news_wrapping.jpg'],
+  },
 
   {
-    title: '湾岸線有料指定席列車ベイライナー',
+    title: '湾岸線に有料指定席列車「ベイライナー」デビュー！',
+    description:
+      '湾岸線に有料指定席列車「ベイライナー」が誕生。忙しい朝も、帰り道も、座席指定でゆったり移動。いつもの通勤・通学が、少し特別な時間に変わります。新しい移動の形を、ぜひお試しください。',
+
     images: [
       '/images/news/news_bayliner.jpg',
       '/images/news/news_bayliner2.jpg',

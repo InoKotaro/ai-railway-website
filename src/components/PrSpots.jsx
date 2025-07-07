@@ -25,11 +25,11 @@ export default function PrSpots({ prSpots, siteColor }) {
         <h2 className="mb-6 text-3xl font-bold" style={{ color: siteColor }}>
           おでかけガイド
         </h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 text-gray-700 sm:grid-cols-4">
           {prSpots.map((spot) => (
             <article
               key={spot.name}
-              className="cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
               onClick={() => handleOpenModal(spot)}
             >
               <div className="relative h-40 w-full">

@@ -11,7 +11,7 @@ export default function Lines({ lines, siteColor }) {
         {lines.map(({ name, about, img }) => (
           <article
             key={name}
-            className="cursor-pointer overflow-hidden rounded-lg shadow-lg"
+            className="bg-white cursor-pointer overflow-hidden rounded-lg shadow-lg"
           >
             {/* <img src={img} alt={name} className="h-40 w-full object-cover" /> */}
             <div className="relative h-40 w-full">
