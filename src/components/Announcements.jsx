@@ -34,7 +34,7 @@ export default function Announcements({ announcements, siteColor }) {
 
   // 各お知らせに追加する日数のリスト
   // 1つ目に7日後、2つ目に14日後、3つ目に23日後指定
-  const daysToAdd = [7, 17, 23];
+  const daysToAdd = [6, 17, 23];
 
   // お知らせがない場合は何も表示しない
   if (!announcements || announcements.length === 0) {
@@ -47,7 +47,7 @@ export default function Announcements({ announcements, siteColor }) {
     <>
       <section id="announcements">
         <h2
-          className="mb-6 flex text-3xl font-bold gap-3"
+          className="mb-6 flex gap-3 text-3xl font-bold"
           style={{ color: siteColor }}
         >
           お知らせ
