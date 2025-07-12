@@ -1,44 +1,119 @@
-import { MdBusiness, MdOutlineRocketLaunch } from 'react-icons/md';
-
-export default function CompanyPage() {
+export default function CompanyProfile() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <section id="company-info">
-        <h1 className="mb-8 flex items-center gap-3 text-3xl font-bold">
-          <MdBusiness className="text-4xl" />
-          会社案内
-        </h1>
-        <div className="space-y-8">
-          {/* 会社概要 */}
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
-            <h2 className="mb-4 text-2xl font-semibold">会社概要</h2>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-3">
-              <div className="font-semibold text-gray-600 md:col-span-1">
-                会社名
-              </div>
-              <div className="md:col-span-2">AI鉄道株式会社</div>
-              <div className="font-semibold text-gray-600 md:col-span-1">
-                設立
-              </div>
-              <div className="md:col-span-2">2024年1月1日</div>
-              <div className="font-semibold text-gray-600 md:col-span-1">
-                事業内容
-              </div>
-              <div className="md:col-span-2">
-                AIを活用した次世代の鉄道システムの開発と運営
-              </div>
-            </div>
-          </div>
-          {/* ビジョン */}
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
-            <h2 className="mb-3 flex items-center gap-3 text-2xl font-semibold">
-              <MdOutlineRocketLaunch className="text-3xl text-blue-500" />
-              私たちのビジョン
-            </h2>
-            <p className="text-gray-700">
-              AI技術を通じて、すべての人に安全で快適な移動体験を提供し、持続可能な社会の実現に貢献します。私たちは、未来の交通インフラを創造するリーディングカンパニーを目指します。
+    <main className="mx-auto max-w-5xl p-6">
+      {/* CEOセクション */}
+      <section className="mb-16 text-center">
+        <h2 className="mb-6 text-2xl font-bold">代表取締役社長</h2>
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-center">
+          <img
+            src="/ceo.jpg"
+            alt="代表取締役社長"
+            className="mx-auto w-full max-w-xs rounded-md md:mx-0"
+          />
+          <div className="text-left">
+            <h3 className="text-xl font-semibold">山田 太郎</h3>
+            <p className="mt-2">
+              私たちは地域社会とともに歩み、安心と信頼の輸送サービスを提供し続けます。
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* 歴史セクション */}
+      <section className="mb-16 text-center">
+        <h2 className="mb-6 text-2xl font-bold">会社の歴史</h2>
+
+        {/* 創業者 */}
+        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-center">
+          <img
+            src="/founder.jpg"
+            alt="創業者"
+            className="mx-auto w-full max-w-xs rounded-md md:mx-0"
+          />
+          <div className="text-left">
+            <h3 className="text-xl font-semibold">鈴木 一郎</h3>
+            <p className="mt-2">
+              1900年に地域交通を支えるべく設立し、多くの人々の暮らしを支えてきました。
+            </p>
+          </div>
+        </div>
+
+        {/* 年表 */}
+        <div className="space-y-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-center">
+            <span className="text-lg font-bold md:w-24">1900年</span>
+            <img
+              src="/train_meiji.jpg"
+              alt="明治時代の汽車"
+              className="mx-auto w-full max-w-xs rounded-md md:mx-0"
+            />
+          </div>
+
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-center">
+            <span className="text-lg font-bold md:w-24">1950年</span>
+            <img
+              src="/train_showa.jpg"
+              alt="昭和時代の旧型電車"
+              className="mx-auto w-full max-w-xs rounded-md md:mx-0"
+            />
+          </div>
+
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-center">
+            <span className="text-lg font-bold md:w-24">1990年</span>
+            <img
+              src="/train_heisei.jpg"
+              alt="平成時代の電車"
+              className="mx-auto w-full max-w-xs rounded-md md:mx-0"
+            />
+          </div>
+
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-center">
+            <span className="text-lg font-bold md:w-24">2020年</span>
+            <img
+              src="/train_modern.jpg"
+              alt="現代の電車"
+              className="mx-auto w-full max-w-xs rounded-md md:mx-0"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 会社情報テーブル */}
+      <section className="text-center">
+        <h2 className="mb-6 text-2xl font-bold">会社情報</h2>
+        <div className="overflow-x-auto">
+          <table className="mx-auto min-w-full border border-gray-300 text-left">
+            <tbody>
+              <tr className="border-b">
+                <th className="bg-gray-100 px-4 py-2">会社名</th>
+                <td className="px-4 py-2">AI電鉄株式会社</td>
+              </tr>
+              <tr className="border-b">
+                <th className="bg-gray-100 px-4 py-2">設立年月日</th>
+                <td className="px-4 py-2">1900年4月1日</td>
+              </tr>
+              <tr className="border-b">
+                <th className="bg-gray-100 px-4 py-2">本社所在地</th>
+                <td className="px-4 py-2"></td>
+              </tr>
+              <tr className="border-b">
+                <th className="bg-gray-100 px-4 py-2">資本金</th>
+                <td className="px-4 py-2">10億円</td>
+              </tr>
+              <tr className="border-b">
+                <th className="bg-gray-100 px-4 py-2">代表者</th>
+                <td className="px-4 py-2">山田 太郎（代表取締役社長）</td>
+              </tr>
+              <tr className="border-b">
+                <th className="bg-gray-100 px-4 py-2">事業内容</th>
+                <td className="px-4 py-2">鉄道事業・地域交通サービス</td>
+              </tr>
+              <tr>
+                <th className="bg-gray-100 px-4 py-2">従業員数</th>
+                <td className="px-4 py-2">2,500名</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
