@@ -1,4 +1,6 @@
-export default function SafetyMeasures() {
+import Image from 'next/image';
+
+export default function SafetyPage() {
   return (
     <main className="mx-auto max-w-3xl bg-gray-50 px-4 py-12">
       <h1 className="mb-12 text-center text-4xl font-bold">安全対策</h1>
@@ -9,9 +11,11 @@ export default function SafetyMeasures() {
           AI電鉄では、すべての駅にホームドアを設置し、お客様の安全を確保しています。
           ホーム上での転落事故を防ぎ、安心してご利用いただけます。
         </p>
-        <img
+        <Image
           src="/platform-doors.jpg"
           alt="ホームドアの写真"
+          width={800}
+          height={533}
           className="h-auto w-full rounded-md"
         />
       </section>
@@ -22,9 +26,11 @@ export default function SafetyMeasures() {
           最先端のAIロボットが駅構内を巡回し、トラブルの早期発見や
           お客様のサポートを行っています。いつでも安心して駅をご利用いただけます。
         </p>
-        <img
+        <Image
           src="/ai-robot.jpg"
-          alt="AIロボットの写真"
+          alt="駅構内を巡回するAIロボット"
+          width={800}
+          height={533}
           className="h-auto w-full rounded-md"
         />
       </section>
@@ -35,9 +41,11 @@ export default function SafetyMeasures() {
           すべての駅員が介助講習を受講し、高齢者や身体の不自由なお客様にも
           安心してご利用いただける体制を整えています。
         </p>
-        <img
+        <Image
           src="/staff-training.jpg"
           alt="駅員の介助研修の様子"
+          width={800}
+          height={533}
           className="h-auto w-full rounded-md"
         />
       </section>

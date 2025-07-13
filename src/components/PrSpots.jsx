@@ -53,6 +53,7 @@ export default function PrSpots({ prSpots, siteColor }) {
               <div className="pt-1.5 pb-5 text-center font-semibold">
                 {spot.name}
               </div>
+              <p className="text-right  mr-3 mb-3"> 詳しく見る &rarr; </p>
             </article>
           ))}
         </div>
