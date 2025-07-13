@@ -5,11 +5,14 @@ import { FaTrainSubway } from 'react-icons/fa6';
 export default function Lines({ lines, siteColor }) {
   return (
     <section id="lines">
-      <h2 className="mb-6 text-3xl font-bold flex gap-3" style={{ color: siteColor }}>
+      <h2
+        className="mb-6 flex gap-3 text-3xl font-bold"
+        style={{ color: siteColor }}
+      >
         路線紹介
-        <FaTrainSubway className='text-4xl'/>
+        <FaTrainSubway className="text-4xl" />
       </h2>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
         {lines.map(({ name, about, img }) => (
           <article
             key={name}
