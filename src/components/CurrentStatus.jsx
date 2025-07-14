@@ -1,7 +1,6 @@
 'use client';
-
-import { useOperationStatus } from '@/hooks/useOperationStatus';
 import { statusMessages } from '@/data/siteData';
+import { useOperationStatus } from '@/hooks/useOperationStatus';
 
 export default function CurrentStatus() {
   const statusMessage = useOperationStatus(statusMessages);
@@ -13,7 +12,7 @@ export default function CurrentStatus() {
 
   return (
     <section className="bg-primary text-gray py-3 text-center font-semibold">
-      <div className="flex items-center justify-center gap-2 px-2">
+      <div className="flex items-center justify-center gap-2 px-2 text-gray-900">
         <span>
           <span>現在の運転状況</span>
         </span>

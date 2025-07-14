@@ -1,13 +1,18 @@
 'use client';
 import Image from 'next/image';
 
-export default function Header({ navLinks, siteColor }) {
+import { siteConfig } from '@/config/config';
+
+export default function Header({ navLinks }) {
   return (
-    <header className="py-4" style={{ backgroundColor: siteColor }}>
+    <header
+      className="py-4"
+      style={{ backgroundColor: siteConfig.color.siteColor }}
+    >
       <div className="container mx-auto flex items-center justify-between px-6">
         <a href="/" className="transition-opacity hover:opacity-80">
           <Image
-            src="/images/logo/logo-white.png" // publicフォルダからのパス
+            src="/images/logo/logo-white.png"
             alt="AI電鉄 ロゴ"
             width={120}
             height={30}

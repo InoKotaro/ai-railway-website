@@ -1,5 +1,10 @@
 import Image from 'next/image';
 
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { siteConfig } from '@/config/config';
+import { navLinks } from '@/data/navLinks';
+
 export default function CompanyPage() {
   return (
     <main className="mx-auto max-w-5xl p-6">

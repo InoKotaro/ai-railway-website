@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaInfoCircle } from 'react-icons/fa';
 
 const Company = ({ siteColor }) => {
@@ -23,15 +23,7 @@ const Company = ({ siteColor }) => {
         <p className="mt-3 flex-grow">
           AI電鉄の企業理念、事業内容、沿革などをご紹介します。私たちは、交通インフラを通じて、地域社会の発展に貢献します。
         </p>
-        <div className="mt-4 text-right">
-          <Link
-            href="/company"
-            className="font-bold"
-            style={{ color: siteColor.primary }}
-          >
-            詳しく見る &rarr;
-          </Link>
-        </div>
+        <div className="mt-4 text-right font-bold">詳しく見る &rarr;</div>
       </div>
     </div>
   );

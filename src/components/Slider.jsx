@@ -1,9 +1,8 @@
 'use client';
-
 import Image from 'next/image';
 // Swiper のコンポーネントとモジュール
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 // Swiper の CSS
 import 'swiper/css';
 

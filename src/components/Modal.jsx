@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect } from 'react';
 
 // 後ろスクロール防止

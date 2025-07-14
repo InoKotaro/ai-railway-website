@@ -12,7 +12,7 @@ export default function Lines({ lines, siteColor }) {
         路線紹介
         <FaTrainSubway className="text-4xl" />
       </h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-4">
         {lines.map(({ name, about, img }) => (
           <article
             key={name}
