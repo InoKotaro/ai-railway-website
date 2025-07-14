@@ -6,7 +6,7 @@ export default function Footer({ siteColor }) {
       className="mt-auto py-6 text-center text-white"
       style={{ backgroundColor: siteColor }}
     >
-      © 2025 AI電鉄株式会社 All rights reserved.
+      © AI電鉄株式会社 All rights reserved.
     </footer>
   );
 }
