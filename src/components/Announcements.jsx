@@ -2,7 +2,10 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { MdAnnouncement } from 'react-icons/md';
+
 import Modal from './Modal';
+
+import { siteConfig } from '@/config/config';
 
 export default function Announcements({ announcements, siteColor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

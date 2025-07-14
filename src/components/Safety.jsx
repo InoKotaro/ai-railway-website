@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaShieldAlt } from 'react-icons/fa';
 
 const Safety = ({ siteColor }) => {
@@ -23,15 +23,7 @@ const Safety = ({ siteColor }) => {
         <p className="mt-3 flex-grow">
           AI電鉄では、お客様に安心してご利用いただくため、最新の技術と徹底した管理体制で、日々の安全運行に努めています。
         </p>
-        <div className="mt-4 text-right">
-          <Link
-            href="/safety"
-            className="font-bold"
-            style={{ color: siteColor.primary }}
-          >
-            詳しく見る &rarr;
-          </Link>
-        </div>
+        <div className="mt-4 text-right font-bold">詳しく見る &rarr;</div>
       </div>
     </div>
   );
