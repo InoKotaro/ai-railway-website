@@ -7,7 +7,7 @@ const Safety = ({ siteColor }) => {
     <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative h-48 w-full">
         <Image
-          src="/images/safety/safety_top.png"
+          src="/images/safety/safety_top.jpg"
           alt="安全・安心への取り組み"
           layout="fill"
           objectFit="cover"

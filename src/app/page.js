@@ -57,7 +57,6 @@ export default function Home() {
           style={{ color: siteConfig.color.siteColor }}
         >
           安全・安心への取り組み / 会社案内
-          <GiRailRoad className="text-4xl" />
         </h2>
 
         {/* 安心安全＆会社案内 */}

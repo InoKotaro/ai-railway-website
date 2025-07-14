@@ -8,11 +8,10 @@ import { navLinks } from '@/data/navLinks';
 export default function SafetyPage() {
   return (
     <div
-      className="flex min-h-screen flex-col"
+      className="flex min-h-screen flex-col text-gray-700"
       style={{ backgroundColor: siteConfig.color.background }}
     >
       <Header navLinks={navLinks} siteColor={siteConfig.color.siteColor} />
-
       <main className="flex-grow">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <h1
@@ -26,10 +25,10 @@ export default function SafetyPage() {
             {/* md:flex-rowで子要素を左から右に横並びにする */}
             <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="md:w-1/2">
-                <h2 className="mb-4 text-2xl font-semibold text-gray-700">
+                <h2 className="mb-4 text-2xl font-semibold">
                   ホームドア全駅設置
                 </h2>
-                <p className="leading-relaxed text-gray-700">
+                <p className="leading-relaxed">
                   AI電鉄では、すべての駅にホームドアを設置し、お客様の安全を確保しています。
                   ホーム上での転落事故を防ぎ、安心してご利用いただけます。
                 </p>
@@ -52,10 +51,10 @@ export default function SafetyPage() {
             {/* flex-direction: row-reverse;で子要素を右から左に横並びにする*/}
             <div className="flex flex-col items-center gap-8 md:flex-row-reverse">
               <div className="md:w-1/2">
-                <h2 className="mb-4 text-2xl font-semibold text-gray-700">
+                <h2 className="mb-4 text-2xl font-semibold">
                   AIロボットで駅構内巡回
                 </h2>
-                <p className="leading-relaxed text-gray-700">
+                <p className="leading-relaxed">
                   最先端のAIロボットが駅構内を巡回し、トラブルの早期発見や
                   お客様のサポートを行っています。いつでも安心して駅をご利用いただけます。
                 </p>
@@ -76,10 +75,10 @@ export default function SafetyPage() {
           <section className="mb-10 rounded-lg bg-white p-6 shadow-md">
             <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="md:w-1/2">
-                <h2 className="mb-4 text-2xl font-semibold text-gray-700">
+                <h2 className="mb-4 text-2xl font-semibold">
                   全駅員の介助講習受講
                 </h2>
-                <p className="leading-relaxed text-gray-700">
+                <p className="leading-relaxed">
                   すべての駅員が介助講習を受講し、高齢者や身体の不自由なお客様にも
                   安心してご利用いただける体制を整えています。
                 </p>

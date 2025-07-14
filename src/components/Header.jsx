@@ -19,7 +19,7 @@ export default function Header({ navLinks }) {
             priority
           />
         </a>
-        <nav className="hidden space-x-6 text-white md:flex">
+        <nav className="hidden space-x-5 text-white lg:flex">
           {navLinks.map(({ name, href }) => (
             <a
               key={name}
