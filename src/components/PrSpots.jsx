@@ -29,11 +29,11 @@ export default function PrSpots({ prSpots, siteColor }) {
     <>
       <section id="prSpots">
         <h2
-          className="mb-6 flex gap-0.5 text-3xl font-bold"
+          className="mb-3 md:mb-6 flex gap-1 text-2xl font-bold md:gap-3 md:text-3xl"
           style={{ color: siteColor }}
         >
           おでかけガイド
-          <FaWalking className="text-4xl" />
+          <FaWalking className="text-3xl md:text-4xl" />
         </h2>
         <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-4">
           {prSpots.map((spot) => (

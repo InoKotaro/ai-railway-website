@@ -31,9 +31,9 @@ export default function Home() {
       {/* スライダー */}
       <Slider slides={sliderSlides} />
 
-      <section className="w-full py-16">
+      <section className="w-full md:mt-16">
         {/* お知らせ */}
-        <div className="mx-auto max-w-6xl px-4 pt-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:pt-5">
           <Announcements
             announcements={announcements}
             siteColor={siteConfig.color.siteColor}
@@ -41,26 +41,26 @@ export default function Home() {
         </div>
 
         {/* 路線紹介 */}
-        <div className="mx-auto mt-17 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
           <Lines lines={lines} siteColor={siteConfig.color.siteColor} />
         </div>
 
         {/* おでかけガイド */}
-        <div className="mx-auto mt-17 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
           <PrSpots prSpots={prSpots} siteColor={siteConfig.color.siteColor} />
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
         <h2
-          className="mb-6 flex gap-2 text-3xl font-bold"
+          className="mb-3 flex gap-3 text-2xl font-bold lg:mb-6 lg:text-3xl"
           style={{ color: siteConfig.color.siteColor }}
         >
           安全・安心への取り組み / 会社案内
         </h2>
 
         {/* 安心安全＆会社案内 */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mb-17 grid grid-cols-1 gap-8 md:grid-cols-2">
           <Link href="/safety" className="block h-full">
             <Safety siteColor={siteConfig.color.siteColor} />
           </Link>

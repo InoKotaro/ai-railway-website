@@ -6,11 +6,11 @@ export default function Lines({ lines, siteColor }) {
   return (
     <section id="lines">
       <h2
-        className="mb-6 flex gap-3 text-3xl font-bold"
+        className="mb-3 flex gap-1 text-2xl font-bold md:mb-6 md:gap-3 md:text-3xl"
         style={{ color: siteColor }}
       >
         路線紹介
-        <FaTrainSubway className="text-4xl" />
+        <FaTrainSubway className="text-3xl lg:text-4xl" />
       </h2>
       <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-4">
         {lines.map(({ name, about, img }) => (

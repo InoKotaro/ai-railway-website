@@ -50,11 +50,11 @@ export default function Announcements({ announcements, siteColor }) {
     <>
       <section id="announcements">
         <h2
-          className="mb-6 flex gap-3 text-3xl font-bold"
+          className="md:my-6 mt-9 mb-3 flex gap-1 text-2xl font-bold md:gap-3 md:text-3xl"
           style={{ color: siteColor }}
         >
           お知らせ
-          <MdAnnouncement className="text-4xl" />
+          <MdAnnouncement className="text-3xl md:text-4xl" />
         </h2>
 
         <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">

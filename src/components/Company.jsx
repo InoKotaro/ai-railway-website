@@ -21,7 +21,7 @@ const Company = ({ siteColor }) => {
         </h3>
 
         <p className="mt-3 flex-grow">
-          AI電鉄の企業理念、事業内容、沿革などをご紹介します。私たちは、交通インフラを通じて、地域社会の発展に貢献します。
+          AI電鉄の企業理念、事業内容をご紹介します。私たちは、交通インフラを通じて、地域社会の発展に貢献します。
         </p>
         <div className="mt-4 text-right font-bold">詳しく見る &rarr;</div>
       </div>
