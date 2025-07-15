@@ -15,7 +15,7 @@ export default function CompanyPage() {
       <main className="mx-auto w-full max-w-5xl flex-grow">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 md:px-8">
           <h1
-            className="mb-5 text-center text-4xl font-bold"
+            className="mb-3 text-center text-3xl font-bold lg:text-4xl"
             style={{ color: siteConfig.color.siteColor }}
           >
             会社案内
@@ -34,7 +34,7 @@ export default function CompanyPage() {
               height={384}
             />
             <div className="text-left">
-              <h3 className="text-xl font-semibold">
+              <h3 className="text-center text-xl font-semibold">
                 <ruby className="text-2xl">
                   蛇葉<rt>Java</rt> 豪<rt>Go</rt>
                 </ruby>
@@ -50,41 +50,41 @@ AI電鉄では、これまで培ってきた現場の知見と最先端のIT技�
         </section>
 
         {/* 会社情報テーブル */}
-        <section className="mb-30 text-center">
+        <section className="mb-13 md:mb-30 text-center">
           <h2 className="mb-6 text-2xl font-bold">会社概要</h2>
           <div className="overflow-x-auto px-7">
             <table className="mx-auto min-w-full border border-gray-700 text-left">
               <tbody>
                 <tr className="border-b">
-                  <th className="bg-gray-100 px-4 py-2">会社名</th>
+                  <th className="bg-gray-200 px-4 py-2">会社名</th>
                   <td className="px-4 py-2">AI電鉄株式会社</td>
                 </tr>
                 <tr className="border-b">
-                  <th className="bg-gray-100 px-4 py-2">設立年月日</th>
+                  <th className="bg-gray-200 px-4 py-2">設立年月日</th>
                   <td className="px-4 py-2">1930年0月0日</td>
                 </tr>
                 <tr className="border-b">
-                  <th className="bg-gray-100 px-4 py-2">本社所在地</th>
+                  <th className="bg-gray-200 px-4 py-2">本社所在地</th>
                   <td className="px-4 py-2">
                     東京都千代田区0-0-0 AI電鉄本社ビル
                   </td>
                 </tr>
                 <tr className="border-b">
-                  <th className="bg-gray-100 px-4 py-2">資本金</th>
+                  <th className="bg-gray-200 px-4 py-2">資本金</th>
                   <td className="px-4 py-2">3000億円</td>
                 </tr>
                 <tr className="border-b">
-                  <th className="bg-gray-100 px-4 py-2">代表者</th>
+                  <th className="bg-gray-200 px-4 py-2">代表者</th>
                   <td className="px-4 py-2">蛇葉 豪（代表取締役社長）</td>
                 </tr>
                 <tr className="border-b">
-                  <th className="bg-gray-100 px-4 py-2">事業内容</th>
+                  <th className="bg-gray-200 px-4 py-2">事業内容</th>
                   <td className="px-4 py-2">
                     鉄道事業・不動産事業・リテール事業
                   </td>
                 </tr>
                 <tr>
-                  <th className="bg-gray-100 px-4 py-2">従業員数</th>
+                  <th className="bg-gray-200 px-4 py-2">従業員数</th>
                   <td className="px-4 py-2">1,300名</td>
                 </tr>
               </tbody>
