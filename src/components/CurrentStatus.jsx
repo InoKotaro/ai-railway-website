@@ -11,7 +11,7 @@ export default function CurrentStatus() {
   }
 
   return (
-    <section className="bg-primary text-gray md:py-3 pt-2 text-center font-semibold">
+    <section className="bg-primary text-gray pt-2 text-center font-semibold md:py-6">
       <div className="flex items-center justify-center gap-2 px-2 text-gray-900">
         <span>
           <span>現在の運転状況</span>

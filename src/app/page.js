@@ -8,6 +8,7 @@ import CurrentStatus from '@/components/CurrentStatus';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Lines from '@/components/Lines';
+import LostItemSearch from '@/components/LostItemSearch';
 import PrSpots from '@/components/PrSpots';
 import Safety from '@/components/Safety';
 import Slider from '@/components/Slider';
@@ -40,6 +41,11 @@ export default function Home() {
           />
         </div>
 
+        {/* お忘れ物検索 */}
+        <div className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
+          <LostItemSearch siteColor={siteConfig.color.siteColor} />
+        </div>
+
         {/* 路線紹介 */}
         <div className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
           <Lines lines={lines} siteColor={siteConfig.color.siteColor} />
@@ -60,7 +66,7 @@ export default function Home() {
         </h2>
 
         {/* 安心安全＆会社案内 */}
-        <div className="mb-17 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mb-9 grid grid-cols-1 gap-8 md:grid-cols-2">
           <Link href="/safety" className="block h-full">
             <Safety siteColor={siteConfig.color.siteColor} />
           </Link>

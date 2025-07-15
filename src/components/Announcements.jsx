@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import { MdAnnouncement } from 'react-icons/md';
+import { IoMdMegaphone } from 'react-icons/io';
 
 import Modal from './Modal';
 
@@ -50,11 +50,11 @@ export default function Announcements({ announcements, siteColor }) {
     <>
       <section id="announcements">
         <h2
-          className="md:my-6 mt-9 mb-3 flex gap-1 text-2xl font-bold md:gap-3 md:text-3xl"
+          className="mt-9 mb-3 flex gap-1 text-2xl font-bold md:my-6 md:gap-2 md:text-3xl"
           style={{ color: siteColor }}
         >
           お知らせ
-          <MdAnnouncement className="text-3xl md:text-4xl" />
+          <IoMdMegaphone className="text-3xl md:text-4xl" />
         </h2>
 
         <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">

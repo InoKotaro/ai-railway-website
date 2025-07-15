@@ -19,7 +19,7 @@ export default function Slider({ slides }) {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      className="mt-3 h-[40vw] w-full md:h-96"
+      className="h-[40vw] w-full md:h-96"
     >
       {slides.map((slide, i) => {
         return (
