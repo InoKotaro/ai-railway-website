@@ -15,13 +15,13 @@ export default function SafetyPage() {
       <main className="flex-grow">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <h1
-            className="mb-12 text-center font-bold text-3xl lg:text-4xl"
+            className="mb-12 text-center text-3xl font-bold lg:text-4xl"
             style={{ color: siteConfig.color.siteColor }}
           >
             安全・安心への取り組み
           </h1>
 
-          <section className="mb-10 rounded-lg bg-white p-6 shadow-md">
+          <section className="mb-9 rounded-lg bg-white p-6 shadow-md md:mb-30">
             {/* md:flex-rowで子要素を左から右に横並びにする */}
             <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="md:w-1/2">

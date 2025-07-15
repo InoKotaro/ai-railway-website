@@ -40,7 +40,7 @@ export default function CompanyPage() {
                 </ruby>
               </h3>
               <p className="mt-2 whitespace-pre-wrap">
-                {`私は現場で鉄道業務の経験を経て、本社にて駅システムの開発をはじめとするIT領域の推進に取り組んでまいりました。
+                {`私は現場で鉄道業務の経験を積み、本社では得意なシステム開発を軸に駅システムなどIT化を推進してまいりました。
 AI電鉄では、これまで培ってきた現場の知見と最先端のIT技術を活かし、すべてのお客様にとって鉄道がより快適で、便利で、安心してご利用いただける存在となるよう、日々挑戦を続けております。
 これからも地域に根ざし、変化する時代のニーズに応え、常に進化を続ける鉄道会社を目指してまいります。
 皆さまの変わらぬご支援とご愛顧を賜りますようお願い申し上げます。`}
@@ -50,7 +50,7 @@ AI電鉄では、これまで培ってきた現場の知見と最先端のIT技�
         </section>
 
         {/* 会社情報テーブル */}
-        <section className="mb-13 md:mb-30 text-center">
+        <section className="mb-13 text-center md:mb-30">
           <h2 className="mb-6 text-2xl font-bold">会社概要</h2>
           <div className="overflow-x-auto px-7">
             <table className="mx-auto min-w-full border border-gray-700 text-left">

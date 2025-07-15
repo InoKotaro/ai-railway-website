@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaWalking } from 'react-icons/fa';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Modal from './Modal';
@@ -29,7 +29,7 @@ export default function PrSpots({ prSpots, siteColor }) {
     <>
       <section id="prSpots">
         <h2
-          className="mb-3 md:mb-6 flex gap-1 text-2xl font-bold md:gap-3 md:text-3xl"
+          className="mb-3 flex gap-0 text-2xl font-bold md:mb-6 md:gap-0 md:text-3xl"
           style={{ color: siteColor }}
         >
           おでかけガイド
@@ -65,10 +65,15 @@ export default function PrSpots({ prSpots, siteColor }) {
         {selectedSpot && (
           <div>
             <Swiper
-              modules={[Navigation, Pagination]}
+              modules={[Autoplay, Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
               loop={selectedSpot.images.length > 1}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                waitForTransition: false,
+              }}
               className="mb-4 rounded-lg"
             >
               {selectedSpot.images.map((src, index) => (
