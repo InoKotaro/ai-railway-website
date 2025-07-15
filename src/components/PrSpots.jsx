@@ -1,4 +1,8 @@
 'use client';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaWalking } from 'react-icons/fa';
@@ -6,10 +10,6 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Modal from './Modal';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export default function PrSpots({ prSpots, siteColor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
