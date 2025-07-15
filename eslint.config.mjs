@@ -1,51 +1,34 @@
-import { defineConfig } from 'eslint/config';
-import pluginReact from 'eslint-plugin-react';
-import pluginImport from 'eslint-plugin-import';
-import globals from 'globals';
+import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
-export default defineConfig({
-  files: ['**/*.{js,jsx,ts,tsx}'],
-  languageOptions: {
-    parserOptions: {
+export default [
+  // 基本設定（JS用）
+  {
+    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      ecmaFeatures: { jsx: true },
-    },
-    globals: {
-      ...globals.browser,
-      ...globals.node,
-    },
-  },
-  plugins: {
-    react: pluginReact,
-    import: pluginImport,
-  },
-  extends: [
-    pluginReact.configs.flat.recommended, // reactはflat config対応
-    // pluginImport.configs.recommended は flat config未対応なので使わない
-  ],
-  rules: {
-    // import/order ルールを手動で指定
-    'react/prop-types': 'off',
-    'react/react-in-jsx-scope': 'off',
-
-    'import/order': [
-      'error',
-      {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          ['parent', 'sibling', 'index'],
-        ],
-        'newlines-between': 'always',
-        alphabetize: { order: 'asc', caseInsensitive: true },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true, // JSXをパース可能にするため必須
+        },
       },
-    ],
-  },
-  settings: {
-    react: {
-      version: 'detect',
+    },
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
+    rules: {
+      // simple-import-sort のルール
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
-});
+
+  // prettier と競合するルールを無効化
+  {
+    rules: {
+      ...prettier.rules,
+    },
+  },
+];
