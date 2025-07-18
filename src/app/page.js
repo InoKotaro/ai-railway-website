@@ -1,5 +1,7 @@
 'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 
 import Announcements from '@/components/Announcements';
 import BackToTopButton from '@/components/BackToTopButton';
@@ -18,6 +20,8 @@ import { navLinks } from '@/data/navLinks';
 import { announcements, lines, prSpots, sliderSlides } from '@/data/siteData';
 
 export default function Home() {
+  const [isPrSpotModalOpen, setIsPrSpotModalOpen] = useState(false);
+
   return (
     <div
       className="flex min-h-screen flex-col"
@@ -53,10 +57,15 @@ export default function Home() {
 
         {/* おでかけガイド */}
         <div className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
-          <PrSpots prSpots={prSpots} siteColor={siteConfig.color.siteColor} />
+          <PrSpots
+            prSpots={prSpots}
+            siteColor={siteConfig.color.siteColor}
+            onModalToggle={setIsPrSpotModalOpen}
+          />
         </div>
       </section>
 
+      {/* 安心安全＆会社案内 */}
       <section className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
         <h2
           className="mb-3 flex gap-3 text-2xl font-bold lg:mb-6 lg:text-3xl"
@@ -64,8 +73,7 @@ export default function Home() {
         >
           安全・安心への取り組み / 会社案内
         </h2>
-
-        {/* 安心安全＆会社案内 */}
+        {/* カード */}
         <div className="mb-9 grid grid-cols-1 gap-8 md:grid-cols-2">
           <Link href="/safety" className="block h-full">
             <Safety siteColor={siteConfig.color.siteColor} />
@@ -80,7 +88,7 @@ export default function Home() {
       <Footer siteColor={siteConfig.color.siteColor} />
 
       {/* トップへ戻るボタン */}
-      <BackToTopButton />
+      <BackToTopButton isModalOpen={isPrSpotModalOpen} />
     </div>
   );
 }
