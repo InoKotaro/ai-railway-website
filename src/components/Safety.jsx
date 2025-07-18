@@ -23,7 +23,7 @@ const Safety = ({ siteColor }) => {
         <p className="mt-3 flex-grow">
           AI電鉄では、お客様に安心してご利用いただくため、最新の技術と徹底した管理体制で、日々の安全運行に努めています。
         </p>
-        <div className="mt-4 text-right font-bold">詳しく見る &rarr;</div>
+        <div className="mt-4 text-right">詳しく見る &rarr;</div>
       </div>
     </div>
   );

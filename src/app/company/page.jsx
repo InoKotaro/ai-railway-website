@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import BackToTopButton from '@/components/BackToTopButton';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { siteConfig } from '@/config/config';
@@ -93,6 +94,9 @@ AI電鉄では、これまで培ってきた現場の知見と最先端のIT技�
         </section>
       </main>
       <Footer siteColor={siteConfig.color.siteColor} />
+
+      {/* トップへ戻るボタン */}
+      <BackToTopButton />
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function PrSpots({ prSpots, siteColor }) {
           おでかけガイド
           <FaWalking className="text-3xl md:text-4xl" />
         </h2>
-        <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-2 lg:grid-cols-4">
           {prSpots.map((spot) => (
             <article
               key={spot.name}
@@ -55,7 +55,7 @@ export default function PrSpots({ prSpots, siteColor }) {
               <div className="pt-1.5 pb-5 text-center font-semibold">
                 {spot.name}
               </div>
-              <p className="mr-3 mb-3 text-right"> 詳しく見る &rarr; </p>
+              <p className="mr-7 mb-5 text-right"> 詳しく見る &rarr; </p>
             </article>
           ))}
         </div>
