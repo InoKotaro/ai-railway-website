@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { IoMdMegaphone } from 'react-icons/io';
 
-import Modal from './Modal';
-
 import { siteConfig } from '@/config/config';
+
+import Modal from './Modal';
 
 export default function Announcements({ announcements, siteColor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

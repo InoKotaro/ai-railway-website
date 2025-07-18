@@ -1,10 +1,11 @@
 'use client';
+// Swiper の CSS
+import 'swiper/css';
+
 import Image from 'next/image';
 // Swiper のコンポーネントとモジュール
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Swiper の CSS
-import 'swiper/css';
 
 export default function Slider({ slides }) {
   // スライダー
@@ -19,7 +20,7 @@ export default function Slider({ slides }) {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      className="h-[40vw] w-full md:h-96"
+      className="h-[48vw] w-full md:h-96"
     >
       {slides.map((slide, i) => {
         return (

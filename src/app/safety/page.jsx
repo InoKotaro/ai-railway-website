@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import BackToTopButton from '@/components/BackToTopButton';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { siteConfig } from '@/config/config';
@@ -21,7 +22,7 @@ export default function SafetyPage() {
             安全・安心への取り組み
           </h1>
 
-          <section className="mb-9 rounded-lg bg-white p-6 shadow-md md:mb-30">
+          <section className="mb-9 rounded-lg bg-white p-6 shadow-md ">
             {/* md:flex-rowで子要素を左から右に横並びにする */}
             <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="md:w-1/2">
@@ -46,7 +47,6 @@ export default function SafetyPage() {
             </div>
           </section>
 
-          {/*  */}
           <section className="mb-10 rounded-lg bg-white p-6 shadow-md">
             {/* flex-direction: row-reverse;で子要素を右から左に横並びにする*/}
             <div className="flex flex-col items-center gap-8 md:flex-row-reverse">
@@ -98,6 +98,9 @@ export default function SafetyPage() {
         </div>
       </main>
       <Footer siteColor={siteConfig.color.siteColor} />
+
+      {/* トップへ戻るボタン */}
+      <BackToTopButton />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { GiRailRoad } from 'react-icons/gi';
 
 import Announcements from '@/components/Announcements';
+import BackToTopButton from '@/components/BackToTopButton';
 import Company from '@/components/Company';
 import CurrentStatus from '@/components/CurrentStatus';
 import Footer from '@/components/Footer';
@@ -78,6 +78,9 @@ export default function Home() {
 
       {/* フッター */}
       <Footer siteColor={siteConfig.color.siteColor} />
+
+      {/* トップへ戻るボタン */}
+      <BackToTopButton />
     </div>
   );
 }
