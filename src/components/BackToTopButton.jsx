@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const BackToTopButton = () => {
+const BackToTopButton = ({ isModalOpen }) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // ページのスクロール量を監視して、ボタンの表示/非表示を切り替えます。
+  // ページスクロール量表示/非表示切り替え
   const toggleVisibility = () => {
-    // 300px以上スクロールされたらボタンを表示
+    // 100px以上スクロール時表示
     if (window.pageYOffset > 100) {
       setIsVisible(true);
     } else {
@@ -16,7 +16,7 @@ const BackToTopButton = () => {
     }
   };
 
-  // ボタンがクリックされたときに、ページトップへスムーズにスクロールさせます。
+  // スクロール停止位置
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -27,7 +27,7 @@ const BackToTopButton = () => {
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
 
-    // コンポーネントがアンマウントされる時にイベントリスナーを削除します。
+    // コンポーネントがアンマウントされる時にイベントリスナー削除
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
@@ -36,8 +36,9 @@ const BackToTopButton = () => {
   return (
     <div
       onClick={scrollToTop}
+      // モーダル表示/非表示設定
       className={`fixed right-2 bottom-6 h-16 w-16 cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 md:right-5 md:bottom-5 md:h-30 md:w-30 ${
-        isVisible
+        isVisible && !isModalOpen
           ? 'translate-y-0 opacity-100'
           : 'pointer-events-none translate-y-full opacity-0'
       }`}
