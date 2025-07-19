@@ -9,11 +9,11 @@ import { navLinks } from '@/data/navLinks';
 export default function SafetyPage() {
   return (
     <div
-      className="flex min-h-screen flex-col text-gray-700"
+      className="flex min-h-screen flex-col"
       style={{ backgroundColor: siteConfig.color.background }}
     >
       <Header navLinks={navLinks} siteColor={siteConfig.color.siteColor} />
-      <main className="flex-grow">
+      <main className="flex-grow text-gray-700">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <h1
             className="mb-12 text-center text-3xl font-bold lg:text-4xl"
@@ -22,7 +22,7 @@ export default function SafetyPage() {
             安全・安心への取り組み
           </h1>
 
-          <section className="mb-9 rounded-lg bg-white p-6 shadow-md ">
+          <section className="mb-9 rounded-lg bg-white p-6 shadow-md">
             {/* md:flex-rowで子要素を左から右に横並びにする */}
             <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="md:w-1/2">

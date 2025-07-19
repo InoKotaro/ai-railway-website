@@ -26,18 +26,21 @@ export default function PrSpots({ prSpots, siteColor, onModalToggle }) {
     setSelectedSpot(null);
   };
 
+  // モーダルの状態を親コンポーネント(src/page.js)に通知
+  // オプショナルチェイニング演算子（?.）使用
   useEffect(() => {
-    onModalToggle(isModalOpen);
+    onModalToggle?.(isModalOpen);
   }, [isModalOpen, onModalToggle]);
+
   return (
     <>
-      <section id="prSpots">
+      <section id="prSpots" className="scroll-m-20">
         <h2
-          className="mb-3 flex gap-0 text-2xl font-bold md:mb-6 md:gap-0 md:text-3xl"
+          className="mb-3 flex gap-0 text-2xl font-bold md:mb-6 md:text-3xl"
           style={{ color: siteColor }}
         >
           おでかけガイド
-          <FaWalking className="text-3xl md:text-4xl" />
+          <FaWalking className="text-3xl md:pt-0.5 md:text-4xl" />
         </h2>
         <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-2 lg:grid-cols-4">
           {prSpots.map((spot) => (

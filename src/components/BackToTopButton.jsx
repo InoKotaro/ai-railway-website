@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const BackToTopButton = ({ isModalOpen }) => {
+export default function BackToTopButton({ isModalOpen }) {
   const [isVisible, setIsVisible] = useState(false);
 
   // ページスクロール量表示/非表示切り替え
@@ -51,11 +51,9 @@ const BackToTopButton = ({ isModalOpen }) => {
         src="/images/back-to-up/backtoup.png"
         alt="トップへ戻る"
         fill
-        sizes="(max-width: 767px) 64px, 200px"
+        sizes="(max-width: 767px) 64px, 120px"
         className="rounded-full"
       />
     </div>
   );
-};
-
-export default BackToTopButton;
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * 運行状況メッセージのリストを受け取り、その中からランダムに1つを選択して返すカスタムフック

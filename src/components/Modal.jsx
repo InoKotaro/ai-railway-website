@@ -1,8 +1,8 @@
 'use client';
 import { useEffect } from 'react';
 
-// 後ろスクロール防止
 export default function Modal({ isOpen, onClose, children }) {
+  // 表示時後ろスクロール防止
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -45,7 +45,7 @@ export default function Modal({ isOpen, onClose, children }) {
         {/* モーダル閉じるボタン */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-2xl font-bold text-gray-500 transition-colors hover:text-gray-800"
+          className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-2xl font-bold border-2 text-gray-500 shadow-md transition-colors hover:bg-gray-200 hover:text-gray-800"
         >
           &times;
         </button>
