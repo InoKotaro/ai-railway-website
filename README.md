@@ -8,7 +8,7 @@ Next.js と Tailwind CSS を使い、鉄道会社をイメージしてWEBサイ�
 
 ## デモサイト
 
-ここ書き換え
+要書換え
 [https://ai-railway.vercel.app/](https://ai-railway.vercel.app/)
 
 ---
@@ -25,6 +25,8 @@ Next.js と Tailwind CSS を使い、鉄道会社をイメージしてWEBサイ�
 
 - Vercel（ホスティング）
 
+- DB 要書換え
+
 - GitHub
 
 ---
@@ -33,7 +35,7 @@ Next.js と Tailwind CSS を使い、鉄道会社をイメージしてWEBサイ�
 
 - 自動スライダーでファーストビューを表示
 
-- レスポンシブデザイン（PC/スマホ対応）
+- レスポンシブデザイン（PC/タブレット/スマホ対応）
 
 - ページルーティング（企業ページ、安全対策ページなど）
 
@@ -46,7 +48,7 @@ Next.js と Tailwind CSS を使い、鉄道会社をイメージしてWEBサイ�
 1⃣ このリポジトリをクローン
 
 ```bash
-ここ書き換え
+要書換え
 git clone https://github.com/your-username/ai-railway-website.git
 ```
 

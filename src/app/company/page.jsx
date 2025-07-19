@@ -9,11 +9,11 @@ import { navLinks } from '@/data/navLinks';
 export default function CompanyPage() {
   return (
     <div
-      className="flex min-h-screen flex-col text-gray-700"
+      className="flex min-h-screen flex-col"
       style={{ backgroundColor: siteConfig.color.background }}
     >
       <Header navLinks={navLinks} siteColor={siteConfig.color.siteColor} />
-      <main className="mx-auto w-full max-w-5xl flex-grow">
+      <main className="mx-auto w-full max-w-5xl flex-grow text-gray-700">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 md:px-8">
           <h1
             className="mb-3 text-center text-3xl font-bold lg:text-4xl"

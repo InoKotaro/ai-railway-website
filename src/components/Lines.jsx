@@ -4,13 +4,13 @@ import { FaTrainSubway } from 'react-icons/fa6';
 
 export default function Lines({ lines, siteColor }) {
   return (
-    <section id="lines">
+    <section id="lines" className="scroll-m-20">
       <h2
-        className="mb-3 flex gap-1 text-2xl font-bold md:mb-6 md:gap-2 md:text-3xl"
+        className="mb-3 flex gap-0.5 text-2xl font-bold md:mb-6 md:gap-1 md:text-3xl"
         style={{ color: siteColor }}
       >
         路線紹介
-        <FaTrainSubway className="text-3xl md:text-4xl" />
+        <FaTrainSubway className="pt-1 text-3xl md:pt-1 md:text-4xl" />
       </h2>
       <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-4">
         {lines.map(({ name, about, img }) => (

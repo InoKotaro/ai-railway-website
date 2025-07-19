@@ -18,13 +18,13 @@ export default function LostItemSearch({ siteColor }) {
   };
 
   return (
-    <section id="lostItem">
+    <section id="lostItem" className="scroll-m-20">
       <h2
-        className="mb-3 flex items-center gap-3 text-2xl font-bold md:mb-6 md:text-3xl"
+        className="mb-3 flex items-center gap-2 text-2xl font-bold md:mb-6 md:gap-1.5 md:text-3xl"
         style={{ color: siteColor }}
       >
         お忘れ物検索
-        <FaSearch className="text-3xl" />
+        <FaSearch className="text-2xl md:pt-1 md:text-3xl" />
       </h2>
       <div className="rounded-lg bg-white p-6 text-gray-700 shadow-lg">
         <p className="mb-4">

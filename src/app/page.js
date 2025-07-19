@@ -20,7 +20,11 @@ import { navLinks } from '@/data/navLinks';
 import { announcements, lines, prSpots, sliderSlides } from '@/data/siteData';
 
 export default function Home() {
-  const [isPrSpotModalOpen, setIsPrSpotModalOpen] = useState(false);
+  const [isAnnouncementsModalOpen, setIsAnnouncementsModalOpen] =
+    useState(false);
+  const [isPrSpotsModalOpen, setIsPrSpotsModalOpen] = useState(false);
+  // どれかモーダル表示中か判定
+  const isAnyModalOpen = isAnnouncementsModalOpen || isPrSpotsModalOpen;
 
   return (
     <div
@@ -42,6 +46,7 @@ export default function Home() {
           <Announcements
             announcements={announcements}
             siteColor={siteConfig.color.siteColor}
+            onModalToggle={setIsAnnouncementsModalOpen}
           />
         </div>
 
@@ -60,15 +65,18 @@ export default function Home() {
           <PrSpots
             prSpots={prSpots}
             siteColor={siteConfig.color.siteColor}
-            onModalToggle={setIsPrSpotModalOpen}
+            onModalToggle={setIsPrSpotsModalOpen}
           />
         </div>
       </section>
 
       {/* 安心安全＆会社案内 */}
-      <section className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
+      <section
+        className="mx-auto mt-9 max-w-6xl scroll-m-20 px-4 sm:px-6 md:mt-17 lg:px-8"
+        id="announcements"
+      >
         <h2
-          className="mb-3 flex gap-3 text-2xl font-bold lg:mb-6 lg:text-3xl"
+          className="mb-3 flex gap-3 text-2xl font-bold md:text-3xl lg:mb-6 lg:text-3xl"
           style={{ color: siteConfig.color.siteColor }}
         >
           安全・安心への取り組み / 会社案内
@@ -88,7 +96,7 @@ export default function Home() {
       <Footer siteColor={siteConfig.color.siteColor} />
 
       {/* トップへ戻るボタン */}
-      <BackToTopButton isModalOpen={isPrSpotModalOpen} />
+      <BackToTopButton isModalOpen={isAnyModalOpen} />
     </div>
   );
 }
