@@ -29,10 +29,14 @@ export default function Home() {
   return (
     <div
       className="flex min-h-screen flex-col"
-      style={{ backgroundColor: siteConfig.color.background }}
+      style={{ backgroundColor: siteConfig.color.backgroundColor }}
     >
       {/* ヘッダー */}
-      <Header navLinks={navLinks} siteColor={siteConfig.color.siteColor} />
+      <Header
+        navLinks={navLinks}
+        siteColor={siteConfig.color.siteColor}
+        backgroundColor={siteConfig.color.backgroundColor}
+      />
 
       {/* 運転状況 */}
       <CurrentStatus />
@@ -73,7 +77,7 @@ export default function Home() {
       {/* 安心安全＆会社案内 */}
       <section
         className="mx-auto mt-9 max-w-6xl scroll-m-20 px-4 sm:px-6 md:mt-17 lg:px-8"
-        id="announcements"
+        id="safety-company"
       >
         <h2
           className="mb-3 flex gap-3 text-2xl font-bold md:text-3xl lg:mb-6 lg:text-3xl"

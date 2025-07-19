@@ -10,9 +10,13 @@ export default function SafetyPage() {
   return (
     <div
       className="flex min-h-screen flex-col"
-      style={{ backgroundColor: siteConfig.color.background }}
+      style={{ backgroundColor: siteConfig.color.backgroundColor }}
     >
-      <Header navLinks={navLinks} siteColor={siteConfig.color.siteColor} />
+      <Header
+        navLinks={navLinks}
+        siteColor={siteConfig.color.siteColor}
+        backgroundColor={siteConfig.color.backgroundColor}
+      />
       <main className="flex-grow text-gray-700">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <h1

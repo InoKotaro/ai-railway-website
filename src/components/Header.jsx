@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-import { siteConfig } from '@/config/config';
-
-export default function Header({ navLinks }) {
+export default function Header({ navLinks, siteColor, backgroundColor }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // メニュー表示時に背景のスクロールを無効化
@@ -23,7 +21,7 @@ export default function Header({ navLinks }) {
   return (
     <header
       className="sticky top-0 z-40 py-4"
-      style={{ backgroundColor: siteConfig.color.siteColor }}
+      style={{ backgroundColor: siteColor }}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* ロゴ */}
@@ -37,8 +35,8 @@ export default function Header({ navLinks }) {
           />
         </a>
 
-        {/* PC表示ヘッダーメニュー */}
-        <nav className="text-green hidden space-x-5 lg:flex">
+        {/* PC表示時ヘッダーメニュー */}
+        <nav className="hidden space-x-5 lg:flex">
           {navLinks.map(({ name, href }) => (
             <a
               key={name}
@@ -53,23 +51,26 @@ export default function Header({ navLinks }) {
         </nav>
 
         {/* ハンバーガーメニュー閉時*/}
-        <div className="lg:hidden">
+        <div className="flex items-center lg:hidden">
+          {/* 開くボタン */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-white focus:outline-none"
             aria-label="メニューを開く"
           >
-            <FaBars size={24} />
+            <FaBars className="h-7 w-7" />
           </button>
         </div>
       </div>
 
       {/* ハンバーガーメニュー開時 */}
       <div
-        className={`bg-opacity-95 fixed inset-0 z-50 transform bg-gray-800 p-6 text-white transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-0 z-50 transform p-6 text-gray-700 transition-transform duration-300 ease-in-out lg:hidden ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        style={{ backgroundColor }}
       >
+        {/* 閉じるボタン */}
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold">メニュー</h2>
           <button
@@ -77,17 +78,17 @@ export default function Header({ navLinks }) {
             className="focus:outline-none"
             aria-label="メニューを閉じる"
           >
-            <FaTimes size={28} />
+            <FaTimes className="h-7 w-7" />
           </button>
         </div>
 
-        {/* メニュー */}
+        {/* 各メニュー */}
         <nav className="mt-10 flex flex-col space-y-8">
           {navLinks.map(({ name, href }) => (
             <a
               key={name}
               href={href}
-              className="border-b border-gray-700 pb-2 text-xl transition-colors hover:text-gray-300"
+              className="border-b border-gray-400 pb-2 text-xl transition-colors hover:text-gray-500"
               onClick={() => setIsMenuOpen(false)}
               target={href.startsWith('http') ? '_blank' : '_self'}
               rel="noopener noreferrer"
