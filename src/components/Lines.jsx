@@ -13,9 +13,9 @@ export default function Lines({ lines, siteColor }) {
         <FaTrainSubway className="pt-1 text-3xl md:pt-1 md:text-4xl" />
       </h2>
       <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-4">
-        {lines.map(({ name, about, img }) => (
+        {lines.map(({ id, name, about, img }) => (
           <article
-            key={name}
+            key={id}
             className="cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg"
           >
             {/* <img src={img} alt={name} className="h-40 w-full object-cover" /> */}

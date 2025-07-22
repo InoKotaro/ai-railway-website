@@ -1,4 +1,3 @@
-'use client';
 import { statusMessages } from '@/data/siteData';
 import { useOperationStatus } from '@/hooks/useOperationStatus';
 
@@ -31,5 +30,3 @@ export default function CurrentStatus() {
     </section>
   );
 }
-
-

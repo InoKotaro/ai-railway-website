@@ -1,5 +1,3 @@
-'use client';
-
 export default function Footer({ siteColor }) {
   return (
     <footer
@@ -10,4 +8,3 @@ export default function Footer({ siteColor }) {
     </footer>
   );
 }
-
