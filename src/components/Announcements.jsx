@@ -18,7 +18,7 @@ const getFutureDate = (days) => {
 
 // 各お知らせに追加する日数のリスト
 // 1つ目に7日後、2つ目に14日後、3つ目に23日後指定
-const daysToAdd = [6, 17, 23];
+const daysToAdd = [6, 11, 23];
 
 export default function Announcements({
   announcements,

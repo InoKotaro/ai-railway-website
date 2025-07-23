@@ -1,57 +1,89 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
-import { categories, lines } from '@/data/siteData';
-
-// 将来的にはAPIから取得
-const lineOptions = ['環状線', '東西線', '南北線', '湾岸線'];
-const categoryOptions = ['傘', '電子機器', '書籍', '衣類', 'その他'];
-
 export default function LostItemSearch({ lines, categories, siteColor }) {
+  const [selectedLine, setSelectedLine] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if (selectedLine) {
+      params.append('line', selectedLine);
+    }
+    if (selectedCategory) {
+      params.append('category', selectedCategory);
+    }
+    router.push(`/lost-items/search?${params.toString()}`);
+  };
+
   return (
-    <section id="lostItem" className="scroll-m-20">
+    <section id="lost-item-search-form" className="scroll-m-20">
       <h2
-        className="mb-3 flex items-center gap-2 text-2xl font-bold md:mb-6 md:gap-1.5 md:text-3xl"
+        className="mb-3 flex gap-2 text-2xl font-bold md:mb-6 md:text-3xl"
         style={{ color: siteColor }}
       >
         お忘れ物検索
-        <FaSearch className="text-2xl md:pt-1 md:text-3xl" />
+        <FaSearch className="pt-1 text-2xl md:text-3xl" />
       </h2>
-      <div className="rounded-lg bg-white p-6 text-gray-700 shadow-lg">
-        <p className="mb-4">
-          駅や電車内でお忘れ物をされた場合は、こちらから検索いただけます。
-        </p>
-        <div className="flex flex-col gap-4 md:flex-row">
-          {/* 路線選択 ドロップダウン */}
-          <select className="block w-full appearance-none rounded border border-gray-200 bg-gray-200 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none">
-            <option value="">すべての路線</option>
-            {lineOptions.map((line) => (
-              <option key={line} value={line}>
-                {line}
-              </option>
-            ))}
-          </select>
-
-          {/* 種類選択 ドロップダウン */}
-          <select className="block w-full appearance-none rounded border border-gray-200 bg-gray-200 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none">
-            <option value="">すべての種類</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-          <button
-            type="button"
-            className="flex w-full items-center justify-center rounded-md px-6 py-2 font-bold text-white transition-opacity hover:opacity-80 md:w-auto"
-            style={{ backgroundColor: siteColor }}
+      <form
+        onSubmit={handleSearch}
+        className="grid grid-cols-1 gap-4 rounded-lg border bg-white p-6 shadow-sm md:grid-cols-3 md:items-end"
+      >
+        <div className="md:col-span-1">
+          <label
+            htmlFor="line-select"
+            className="mb-1 block text-sm font-medium text-gray-700"
           >
-            <FaSearch className="mr-2" />
-            検索
-          </button>
+            路線
+          </label>
+          <select
+            id="line-select"
+            value={selectedLine}
+            onChange={(e) => setSelectedLine(e.target.value)}
+            className="w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          >
+            <option value="">すべて</option>
+            {lines.map((line) => (
+              <option key={line.id} value={line.name}>
+                {line.name}
+              </option>
+            ))}
+          </select>
         </div>
-      </div>
+        <div className="md:col-span-1">
+          <label
+            htmlFor="category-select"
+            className="mb-1 block text-sm font-medium text-gray-700"
+          >
+            カテゴリ
+          </label>
+          <select
+            id="category-select"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          >
+            <option value="">すべて</option>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.name}>
+                {cat.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <button
+          type="submit"
+          className="w-full rounded-md px-4 py-2 text-white md:col-span-1"
+          style={{ backgroundColor: siteColor }}
+        >
+          検索する
+        </button>
+      </form>
     </section>
   );
 }

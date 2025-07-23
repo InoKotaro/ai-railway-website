@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
 import Announcements from '@/components/Announcements';
 import BackToTopButton from '@/components/BackToTopButton';
@@ -17,6 +16,7 @@ import Slider from '@/components/Slider';
 import { siteConfig } from '@/config/config';
 // コンポーネント
 import { navLinks } from '@/data/navLinks';
+import { useModalState } from '@/hooks/useModalState';
 
 export default function PageClient({
   searchLines,
@@ -26,11 +26,8 @@ export default function PageClient({
   prSpots,
   sliderSlides,
 }) {
-  const [isAnnouncementsModalOpen, setIsAnnouncementsModalOpen] =
-    useState(false);
-  const [isPrSpotsModalOpen, setIsPrSpotsModalOpen] = useState(false);
-  // どれかモーダル表示中か判定
-  const isAnyModalOpen = isAnnouncementsModalOpen || isPrSpotsModalOpen;
+  const { modalSetters, isAnyModalOpen } = useModalState(false, false);
+  const [setIsAnnouncementsModalOpen, setIsPrSpotsModalOpen] = modalSetters;
 
   return (
     <div
@@ -61,7 +58,10 @@ export default function PageClient({
         </div>
 
         {/* お忘れ物検索 */}
-        <div className="mx-auto mt-9 max-w-6xl px-4 sm:px-6 md:mt-17 lg:px-8">
+        <div
+          id="lost-item-search"
+          className="mx-auto mt-9 max-w-6xl scroll-m-20 px-4 sm:px-6 md:mt-17 lg:px-8"
+        >
           <LostItemSearch
             lines={searchLines}
             categories={searchCategories}
