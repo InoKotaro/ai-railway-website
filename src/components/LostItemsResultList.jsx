@@ -29,10 +29,9 @@ export default function LostItemsResultList({ items }) {
             />
           </div>
           <div className="text-gray-700">
-            <h2 className="text-xl font-bold">{item.name}</h2>
-            <p>カテゴリ: {item.category}</p>
-            <p>発見場所: {item.foundLocation}</p>
-            <p>保管場所: {item.storageLocation}</p>
+            <p>種類： {item.category}</p>
+            <p>路線： {item.foundLocation}</p>
+            <p>保管： {item.storageLocation}</p>
           </div>
         </div>
       ))}

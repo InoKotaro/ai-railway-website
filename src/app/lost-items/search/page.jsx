@@ -26,9 +26,9 @@ export default async function LostItemSearchResultPage({ searchParams }) {
         <div className="mt-8 text-center">
           <Link
             href="/#lost-item-search"
-            className="inline-block rounded bg-gray-600 px-6 py-3 text-white hover:bg-gray-700"
+            className="inline-block rounded bg-gray-700 px-6 py-3 text-white hover:bg-gray-700"
           >
-            もう一度検索する
+            お忘れ物検索トップへ
           </Link>
         </div>
       </main>

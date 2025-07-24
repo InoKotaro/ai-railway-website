@@ -36,6 +36,27 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
       >
         <div className="md:col-span-1">
           <label
+            htmlFor="category-select"
+            className="mb-1 block text-sm font-medium text-gray-700"
+          >
+            種類
+          </label>
+          <select
+            id="category-select"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          >
+            <option value="">すべて</option>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.name}>
+                {cat.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="md:col-span-1">
+          <label
             htmlFor="line-select"
             className="mb-1 block text-sm font-medium text-gray-700"
           >
@@ -55,27 +76,7 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
             ))}
           </select>
         </div>
-        <div className="md:col-span-1">
-          <label
-            htmlFor="category-select"
-            className="mb-1 block text-sm font-medium text-gray-700"
-          >
-            カテゴリ
-          </label>
-          <select
-            id="category-select"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-          >
-            <option value="">すべて</option>
-            {categories.map((cat) => (
-              <option key={cat.id} value={cat.name}>
-                {cat.name}
-              </option>
-            ))}
-          </select>
-        </div>
+
         <button
           type="submit"
           className="w-full rounded-md px-4 py-2 text-white md:col-span-1"
