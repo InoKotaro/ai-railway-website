@@ -34,7 +34,7 @@ export default async function LostItemSearchResultPage({ searchParams }) {
         {/* 条件付きレンダリング:
         1件以上あれば(true)判定で && 右が表示 */}
         {filteredItems.length > 0 && (
-          <p className="mb-3 text-gray-700">
+          <p className="mb-3 text-sm text-gray-700 sm:text-base">
             お問い合わせは各センターまでお願い致します。
           </p>
         )}

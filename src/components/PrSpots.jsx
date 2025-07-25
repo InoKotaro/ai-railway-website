@@ -42,7 +42,7 @@ export default function PrSpots({ prSpots, siteColor, onModalToggle }) {
           おでかけガイド
           <FaWalking className="text-3xl md:pt-0.5 md:text-4xl" />
         </h2>
-        <div className="grid grid-cols-1 gap-6 text-gray-700 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 text-gray-700 sm:grid-cols-2 md:grid-cols-4">
           {prSpots.map((spot) => (
             <article
               key={spot.name}

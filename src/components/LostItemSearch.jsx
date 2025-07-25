@@ -82,7 +82,7 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
           className="w-full rounded-md px-4 py-2 text-white md:col-span-1"
           style={{ backgroundColor: siteColor }}
         >
-          検索する
+          検索
         </button>
       </form>
     </section>
