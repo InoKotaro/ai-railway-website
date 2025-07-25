@@ -27,6 +27,7 @@ model LostItem {
   lineId      Int
   categoryId  Int
   itemName    String
+  center      String?
   status      Status
   imageUrl    String?   // 画像パス
   notes       String?   // 備考

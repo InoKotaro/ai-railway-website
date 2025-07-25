@@ -28,7 +28,7 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
         style={{ color: siteColor }}
       >
         お忘れ物検索
-        <FaSearch className="pt-1 text-2xl md:text-3xl" />
+        <FaSearch className="text-1xl md:text-1xl mt-1" />
       </h2>
       <form
         onSubmit={handleSearch}
@@ -45,7 +45,7 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
             id="category-select"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="w-full rounded-md border-gray-300 p-2 text-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           >
             <option value="">すべて</option>
             {categories.map((cat) => (
@@ -66,7 +66,7 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
             id="line-select"
             value={selectedLine}
             onChange={(e) => setSelectedLine(e.target.value)}
-            className="w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="w-full rounded-md border-gray-300 p-2 text-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           >
             <option value="">すべて</option>
             {lines.map((line) => (

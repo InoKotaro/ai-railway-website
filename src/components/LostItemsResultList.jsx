@@ -30,8 +30,8 @@ export default function LostItemsResultList({ items }) {
           </div>
           <div className="text-gray-700">
             <p>種類： {item.category}</p>
-            <p>路線： {item.foundLocation}</p>
-            <p>保管： {item.storageLocation}</p>
+            <p>路線： {item.foundLine}</p>
+            <p>保管： {item.center}</p>
           </div>
         </div>
       ))}
