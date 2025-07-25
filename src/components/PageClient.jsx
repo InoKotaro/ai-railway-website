@@ -14,7 +14,6 @@ import PrSpots from '@/components/PrSpots';
 import Safety from '@/components/Safety';
 import Slider from '@/components/Slider';
 import { siteConfig } from '@/config/config';
-// コンポーネント
 import { navLinks } from '@/data/navLinks';
 import { useModalState } from '@/hooks/useModalState';
 
@@ -26,8 +25,10 @@ export default function PageClient({
   prSpots,
   sliderSlides,
 }) {
-  const { modalSetters, isAnyModalOpen } = useModalState(false, false);
-  const [setIsAnnouncementsModalOpen, setIsPrSpotsModalOpen] = modalSetters;
+  // お知らせ、PRスポット、ヘッダーメニューの3つのモーダル/メニュー状態を管理
+  const { modalSetters, isAnyModalOpen } = useModalState(false, false, false);
+  const [setIsAnnouncementsModalOpen, setIsPrSpotsModalOpen, setIsMenuOpen] =
+    modalSetters;
 
   return (
     <div
@@ -39,6 +40,7 @@ export default function PageClient({
         navLinks={navLinks}
         siteColor={siteConfig.color.siteColor}
         backgroundColor={siteConfig.color.backgroundColor}
+        onMenuToggle={setIsMenuOpen}
       />
 
       {/* 運転状況 */}

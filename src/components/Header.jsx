@@ -3,7 +3,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-export default function Header({ navLinks, siteColor, backgroundColor }) {
+export default function Header({
+  navLinks,
+  siteColor,
+  backgroundColor,
+  onMenuToggle,
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // メニュー表示時に背景のスクロールを無効化
@@ -13,10 +18,14 @@ export default function Header({ navLinks, siteColor, backgroundColor }) {
     } else {
       document.body.style.overflow = 'auto';
     }
+    // 親コンポーネントに状態を通知
+    onMenuToggle?.(isMenuOpen);
+
     return () => {
       document.body.style.overflow = 'auto';
+      onMenuToggle?.(false);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, onMenuToggle]);
 
   return (
     <header
