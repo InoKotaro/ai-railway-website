@@ -13,7 +13,7 @@ export default function LostItemsResultList({ items }) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-2">
       {items.map((item) => (
         <div
           key={item.id}
