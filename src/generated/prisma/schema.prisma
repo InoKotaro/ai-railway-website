@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Line {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  lostItems LostItem[]
+}
+
+model Category {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  lostItems LostItem[]
+}
+
+model LostItem {
+  id         Int      @id @default(autoincrement())
+  lineId     Int
+  categoryId Int
+  itemName   String
+  status     Status
+  imageUrl   String? // 画像パス
+  notes      String? // 備考
+  line       Line     @relation(fields: [lineId], references: [id])
+  category   Category @relation(fields: [categoryId], references: [id])
+}
+
+enum Status {
+  STORED // 保管中
+  RETURNED // 返却済み
+  DISCARDED // 破棄済み
+}
