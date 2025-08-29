@@ -7,7 +7,6 @@ export const navLinks = [
     name: '安全・安心への取り組み',
     href: '/#safety-company',
   },
-  { name: '採用ページ', href: '/recruit' },
   {
     name: '会社案内',
     href: '/#safety-company',

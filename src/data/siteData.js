@@ -148,7 +148,7 @@ export const prSpots = [
 小さなお子さまから大人まで楽しめる遊びがいっぱいで、家族みんなの思い出作りにぴったりのスポットです。`,
   },
   {
-    name: 'オーシャンミュージアム浜里',
+    name: '海島SEA ISLAND',
     img: '/images/outing/aqua_01.jpg',
     images: [
       '/images/outing/aqua_01.jpg',
@@ -156,7 +156,7 @@ export const prSpots = [
       '/images/outing/aqua_03.jpg',
       '/images/outing/aqua_04.jpg',
     ],
-    station: '湾岸線  浜里駅',
+    station: '湾岸線  海島駅',
     description: `オーシャンミュージアム浜里では、色とりどりの魚が泳ぐ巨大水槽と、自慢のカジキマグロショーをお楽しみいただけます。
 海の魅力を学べる展示や、家族で参加できるワークショップもあり、大人から子どもまで大満足。
 週末のおでかけにぴったりの水族館です。`,
