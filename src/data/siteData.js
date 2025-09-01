@@ -41,8 +41,8 @@ export const sliderSlides = [
 // お知らせ
 export const announcements = [
   {
-    title: '海原車両センター特別公開イベント開催！',
-    description: `普段は関係者以外立ち入ることができない海原車両センターを、特別に一般公開いたします。当日は現役の作業員が電車のしくみや点検の様子をわかりやすく解説。
+    title: '砂原車両センター特別公開イベント開催！',
+    description: `普段は関係者以外立ち入ることができない砂原車両センターを、特別に一般公開いたします。当日は現役の作業員が電車のしくみや点検の様子をわかりやすく解説。
 ぜひこの機会に、普段見ることのできない車両センターの裏側をお楽しみください。`,
     images: ['/images/news/news_depot.jpg', '/images/news/news_depot02.jpg'],
   },
