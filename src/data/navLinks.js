@@ -5,10 +5,10 @@ export const navLinks = [
   { name: 'おでかけガイド', href: '/#prSpots' },
   {
     name: '安全・安心への取り組み',
-    href: '/#safety-company',
+    href: '/safety',
   },
   {
     name: '会社案内',
-    href: '/#safety-company',
+    href: '/company',
   },
 ];
