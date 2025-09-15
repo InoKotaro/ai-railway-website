@@ -15,3 +15,10 @@ jest.mock('next/image', () => {
   // eslint-disable-next-line @next/next/no-img-element
   return (props) => React.createElement('img', props);
 });
+
+// Mock swiper/modules
+jest.mock('swiper/modules', () => ({
+  Autoplay: () => null,
+  Navigation: () => null,
+  Pagination: () => null,
+}));
