@@ -3,7 +3,7 @@ import React from 'react';
 
 import PageClient from './PageClient';
 
-// Mock all child components
+// すべての子コンポーネントをモック化
 jest.mock('@/components/Header', () => () => <div data-testid="mock-header" />);
 jest.mock('@/components/CurrentStatus', () => () => (
   <div data-testid="mock-current-status" />
@@ -28,7 +28,7 @@ jest.mock('@/components/BackToTopButton', () => () => (
   <div data-testid="mock-back-to-top-button" />
 ));
 
-// Mock config and data
+// 設定とデータをモック化
 jest.mock('@/config/config', () => ({
   siteConfig: {
     color: {
@@ -41,7 +41,7 @@ jest.mock('@/data/navLinks', () => ({ navLinks: [] }));
 
 describe('PageClient', () => {
   it('renders all the main sections of the page', () => {
-    // Provide dummy props
+    // ダミーのpropsを提供
     const props = {
       searchLines: [],
       searchCategories: [],
@@ -53,7 +53,7 @@ describe('PageClient', () => {
 
     render(<PageClient {...props} />);
 
-    // Check that all mocked components are rendered
+    // すべてのモック化されたコンポーネントがレンダリングされていることを確認
     expect(screen.getByTestId('mock-header')).toBeInTheDocument();
     expect(screen.getByTestId('mock-current-status')).toBeInTheDocument();
     expect(screen.getByTestId('mock-slider')).toBeInTheDocument();

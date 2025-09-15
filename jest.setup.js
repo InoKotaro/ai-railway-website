@@ -13,7 +13,10 @@ jest.mock('next/link', () => {
 jest.mock('next/image', () => {
   const React = require('react');
   // eslint-disable-next-line @next/next/no-img-element
-  return (props) => React.createElement('img', props);
+  return (props) => {
+    const { fill, ...rest } = props; // Destructure 'fill'
+    return React.createElement('img', rest); // Pass rest of the props
+  };
 });
 
 // Mock swiper/modules
