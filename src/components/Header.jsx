@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -34,7 +35,7 @@ export default function Header({
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* ロゴ */}
-        <a href="/" className="transition-opacity hover:opacity-80">
+        <Link href="/" className="transition-opacity hover:opacity-80">
           <Image
             src="/images/logo/logo-white.png"
             alt="AI電鉄 ロゴ"
@@ -42,21 +43,31 @@ export default function Header({
             height={30}
             priority
           />
-        </a>
+        </Link>
 
         {/* PC表示時ヘッダーメニュー */}
         <nav className="hidden space-x-5 lg:flex">
-          {navLinks.map(({ name, href }) => (
-            <a
-              key={name}
-              href={href}
-              className="transition-colors hover:underline"
-              target={href.startsWith('http') ? '_blank' : '_self'}
-              rel="noopener noreferrer"
-            >
-              {name}
-            </a>
-          ))}
+          {navLinks.map(({ name, href }) =>
+            href.startsWith('http') ? (
+              <a
+                key={name}
+                href={href}
+                className="transition-colors hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {name}
+              </a>
+            ) : (
+              <Link
+                key={name}
+                href={href}
+                className="transition-colors hover:underline"
+              >
+                {name}
+              </Link>
+            ),
+          )}
         </nav>
 
         {/* ハンバーガーメニュー閉時*/}
@@ -93,18 +104,29 @@ export default function Header({
 
         {/* 各メニュー */}
         <nav className="mt-10 flex flex-col space-y-8">
-          {navLinks.map(({ name, href }) => (
-            <a
-              key={name}
-              href={href}
-              className="border-b border-gray-400 pb-2 text-xl transition-colors hover:text-gray-500"
-              onClick={() => setIsMenuOpen(false)}
-              target={href.startsWith('http') ? '_blank' : '_self'}
-              rel="noopener noreferrer"
-            >
-              {name}
-            </a>
-          ))}
+          {navLinks.map(({ name, href }) =>
+            href.startsWith('http') ? (
+              <a
+                key={name}
+                href={href}
+                className="border-b border-gray-400 pb-2 text-xl transition-colors hover:text-gray-500"
+                onClick={() => setIsMenuOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {name}
+              </a>
+            ) : (
+              <Link
+                key={name}
+                href={href}
+                className="border-b border-gray-400 pb-2 text-xl transition-colors hover:text-gray-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {name}
+              </Link>
+            ),
+          )}
         </nav>
       </div>
     </header>

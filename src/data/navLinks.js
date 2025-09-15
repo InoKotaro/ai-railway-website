@@ -1,6 +1,6 @@
 export const navLinks = [
   { name: 'お知らせ', href: '/#announcements' },
-  { name: 'お忘れ物検索', href: '/#lostItem' },
+  { name: 'お忘れ物検索', href: '/#lost-item-search' },
   { name: '路線紹介', href: '/#lines' },
   { name: 'おでかけガイド', href: '/#prSpots' },
   {
