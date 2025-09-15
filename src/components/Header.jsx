@@ -41,12 +41,12 @@ export default function Header({
             alt="AI電鉄 ロゴ"
             width={120}
             height={30}
-            priority
+            priority="true"
           />
         </Link>
 
         {/* PC表示時ヘッダーメニュー */}
-        <nav className="hidden space-x-5 lg:flex">
+        <nav aria-label="Main navigation" className="hidden space-x-5 lg:flex">
           {navLinks.map(({ name, href }) =>
             href.startsWith('http') ? (
               <a
@@ -103,7 +103,10 @@ export default function Header({
         </div>
 
         {/* 各メニュー */}
-        <nav className="mt-10 flex flex-col space-y-8">
+        <nav
+          aria-label="Mobile navigation"
+          className="mt-10 flex flex-col space-y-8"
+        >
           {navLinks.map(({ name, href }) =>
             href.startsWith('http') ? (
               <a
