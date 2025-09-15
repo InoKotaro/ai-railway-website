@@ -95,7 +95,7 @@ export default function PageClient({
           className="mb-3 flex gap-3 text-2xl font-bold md:text-3xl lg:mb-6 lg:text-3xl"
           style={{ color: siteConfig.color.siteColor }}
         >
-          安全・安心への取り組み / 会社案内
+          安全・安心への取り組み /<br className="sm:hidden" /> 会社案内
         </h2>
         {/* カード */}
         <div className="mb-9 grid grid-cols-1 gap-8 md:grid-cols-2">
