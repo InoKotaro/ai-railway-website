@@ -95,7 +95,7 @@ export default function LostItemsResultList({ items }) {
                     if (page === currentPage - 3 || page === currentPage + 3) {
                       return (
                         <span key={page} className="px-2 py-2 text-gray-500">
-                          ...
+                          ～
                         </span>
                       );
                     }

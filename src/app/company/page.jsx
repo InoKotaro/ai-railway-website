@@ -34,7 +34,7 @@ export default function CompanyPage() {
             <Image
               src="/images/company/company_java.jpg"
               alt="代表取締役社長"
-              className="mx-auto w-full max-w-sm rounded-md md:mx-0"
+              className="mx-auto w-full max-w-sm mt-7 rounded-md md:mx-0"
               width={384}
               height={384}
             />
