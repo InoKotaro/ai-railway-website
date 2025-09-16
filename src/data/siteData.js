@@ -108,7 +108,6 @@ export const prSpots = [
     name: 'グランド・サンプルホテルズ',
     // トップ用画像
     img: '/images/outing/hotel_01.jpg',
-    description: '',
     images: [
       // スライド用画像
       '/images/outing/hotel_01.jpg',
