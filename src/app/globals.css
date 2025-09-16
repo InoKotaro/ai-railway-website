@@ -18,16 +18,13 @@
     --foreground: #ededed;
   }
 }
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* スクロール */
-html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* スクロール */
+  user-select: none;
 }
 
 /* Swiperのナビゲーションボタン（左右の矢印）のスタイル */

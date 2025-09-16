@@ -8,34 +8,29 @@ Next.js と Tailwind CSS を使い、鉄道会社をイメージしてWEBサイ�
 当ポートフォリオで使用している車両や駅、沿線施設、忘れ物などの画像はGoogle DeepMind製画像生成AIツール**Whisk**で生成しております。<br>
 AIが作った世界観という意味をこめて、「AI電鉄」という名前に致しました。
 
----
-
 ## デモサイト
 
-要書換え
-[https://ai-railway.vercel.app/](https://ai-railway.vercel.app/)
-
----
+https://ai-railway-website.vercel.app/
 
 ## 使用技術
 
-- React
+- React 19.1.0
 
-- Next.js 14（App Router）
+- Next.js 15.3.4（App Router）
 
-- Tailwind CSS
+- Tailwind CSS 4.1.13
 
 - Swiper
 
 - Prisma
+
+- PostgreSQL（データベース）
 
 - dbdiagram.io（ER図）
 
 - Vercel（デプロイ）
 
 - GitHub
-
----
 
 ## 主な機能
 
@@ -53,15 +48,9 @@ AIが作った世界観という意味をこめて、「AI電鉄」という名�
 
 - レスポンシブ対応
 
----
-
 ## ER図
 
-当サイトのデータ構造は以下のER図の通りです。
-
 ![ER図](./docs/er-diagram.png)
-
----
 
 ## 苦労点・気付き・学び
 
