@@ -1,19 +1,36 @@
 'use client';
 
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export default function LostItemsResultList({ items }) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [shuffledItems, setShuffledItems] = useState([]);
   const itemsPerPage = 10;
 
+  useEffect(() => {
+    // Shuffling is a client-side effect to prevent hydration mismatch
+    if (items && items.length > 0) {
+      const shuffled = [...items];
+      // Fisher-Yates shuffle
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      setShuffledItems(shuffled);
+    } else {
+      // Also handle the case where items is null/undefined or empty
+      setShuffledItems(items || []);
+    }
+  }, [items]);
+
   // ページネーション用の計算
-  const totalPages = Math.ceil((items?.length || 0) / itemsPerPage);
+  const totalPages = Math.ceil((shuffledItems?.length || 0) / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = useMemo(() => {
-    return items?.slice(startIndex, endIndex) || [];
-  }, [items, startIndex, endIndex]);
+    return shuffledItems?.slice(startIndex, endIndex) || [];
+  }, [shuffledItems, startIndex, endIndex]);
 
   // ページ変更ハンドラー
   const handlePageChange = (page) => {
@@ -22,7 +39,7 @@ export default function LostItemsResultList({ items }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (!items || items.length === 0) {
+  if (!shuffledItems || shuffledItems.length === 0) {
     return (
       <div className="rounded-lg border bg-white p-8 text-center text-gray-600 shadow-sm">
         <p className="text-lg">
@@ -65,8 +82,8 @@ export default function LostItemsResultList({ items }) {
         <div className="flex flex-col items-center space-y-4">
           {/* ページ情報 */}
           <div className="text-sm text-gray-600">
-            {startIndex + 1} - {Math.min(endIndex, items.length)} 件目 / 全{' '}
-            {items.length} 件
+            {startIndex + 1} - {Math.min(endIndex, shuffledItems.length)} 件目 / 全{' '}
+            {shuffledItems.length} 件
           </div>
 
           {/* ページネーションボタン */}
