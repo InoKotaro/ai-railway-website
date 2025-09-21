@@ -79,8 +79,14 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
 
         <button
           type="submit"
-          className="w-full rounded-md px-4 py-2 text-white md:col-span-1"
+          className="w-full rounded-md px-4 py-2 text-white transition-colors duration-300 md:col-span-1"
           style={{ backgroundColor: siteColor }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = `${siteColor}d0`; //ホバーで色変える
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = siteColor;
+          }}
         >
           検索
         </button>
