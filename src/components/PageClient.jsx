@@ -31,10 +31,8 @@ export default function PageClient({
     modalSetters;
 
   return (
-    <div
-      className="flex min-h-screen flex-col"
-      style={{ backgroundColor: siteConfig.color.backgroundColor }}
-    >
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
+      
       {/* ヘッダー */}
       <Header
         navLinks={navLinks}

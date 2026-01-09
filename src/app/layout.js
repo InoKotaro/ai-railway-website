@@ -3,6 +3,8 @@ import './globals.css';
 
 import { Noto_Sans_JP } from 'next/font/google';
 
+import { siteConfig } from '../config/config';
+
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -17,7 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body className={notoSansJP.className}>{children}</body>
+      <body
+        className={notoSansJP.className}
+        style={{ '--site-bg': siteConfig.color.backgroundColor }}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -20,7 +20,7 @@ export default function Slider({ slides }) {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      className="h-[48vw] w-full md:h-96"
+      className="aspect-[16/9] w-full md:h-96"
     >
       {slides.map((slide, i) => {
         return (
@@ -42,5 +42,3 @@ export default function Slider({ slides }) {
     </Swiper>
   );
 }
-
-
