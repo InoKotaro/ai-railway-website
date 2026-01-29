@@ -32,7 +32,7 @@ export default function LostItemSearch({ lines, categories, siteColor }) {
       </h2>
       <form
         onSubmit={handleSearch}
-        className="grid grid-cols-1 gap-4 rounded-lg border bg-white p-6 shadow-sm md:grid-cols-3 md:items-end"
+        className="grid grid-cols-1 gap-4 rounded-lg bg-white p-6 shadow-sm md:grid-cols-3 md:items-end"
       >
         <div className="md:col-span-1">
           <label
