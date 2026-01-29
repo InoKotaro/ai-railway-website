@@ -52,7 +52,7 @@ export default function Header({
               <a
                 key={name}
                 href={href}
-                className="transition-colors hover:underline"
+                className="text-gray-100 transition-colors hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -62,7 +62,7 @@ export default function Header({
               <Link
                 key={name}
                 href={href}
-                className="transition-colors hover:underline"
+                className="text-gray-100 transition-colors hover:underline"
               >
                 {name}
               </Link>
